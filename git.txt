@@ -1,0 +1,9 @@
+per SALVARE le modifiche
+
+git add .
+git commit -m "un commento"
+git push
+
+per recuperare le modifiche dal server
+
+git pull

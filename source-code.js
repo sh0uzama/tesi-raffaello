@@ -195,6 +195,7 @@ d3.csv("dati.csv").then(function (data) {
 
 });
 
+// commento
 function resetFilter(filter) {
     let chart = null;
     switch (filter) {
