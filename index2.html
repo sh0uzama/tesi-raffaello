@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESI RAFFAELLO</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="dc.css">
+    <link rel="stylesheet" href="source-code.css">
+
+</head>
+
+<body>
+    <h1>
+        <center>
+            <strong>Prima Prova Tesi</strong>
+        </center>
+    </h1>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+
+                <div class="chart wind-direction-chart clearfix">
+                    <h4 class="chart-title clearfix">
+                        Filter by Wind Direction
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('wind')">reset</button>
+                    </h4>
+                    <div id="wind-direction-chart"></div>
+                    <div id="wind-direction-chart-legend"></div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <div class="chart year-chart clearfix">
+                    <h4 class="chart-title clearfix">
+                        Filter by Year
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('year')">reset</button>
+                    </h4>
+                    <div id="year-chart"></div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <div class="chart month-chart clearfix">
+                    <h4 class="chart-title clearfix">
+                        Filter by Month
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('month')">reset</button>
+                    </h4>
+                    <div id="month-chart"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <h2>Data Analysis</h2>
+
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h4>Wave Height (Avg)</h4>
+            <div id="wave-height-chart"></div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h4>Wave Lenght (Avg)</h4>
+            <div id="wave-lenght-chart"></div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h4>Max Wave Lenght per Year</h4>
+            <div id="wave-peak-chart"></div>
+        </div>
+        <div class="col"></div>
+    </div>
+
+    <script src="bootstrap.min.js"></script>
+    <script src="d3.js"></script>
+    <script src="crossfilter.js"></script>
+    <script src="dc.js"></script>
+    <script src="source-code.js"></script>
+
+</body>
+
+</html>

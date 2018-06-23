@@ -1,0 +1,12 @@
+#wind-direction-chart-legend .dc-html-legend {
+    overflow: hidden;
+}
+
+#wind-direction-chart-legend .dc-html-legend .dc-legend-item-vertical {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#wind-direction-chart-legend .dc-html-legend .dc-legend-item-label {
+    font-size: 1em;
+}

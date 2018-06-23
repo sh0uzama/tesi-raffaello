@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROVA 6</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="dc.css">
+</head>
+
+<body>
+    <h1>
+        <center>
+            <strong>Prima Prova Tesi</strong>
+        </center>
+    </h1>
+
+    <div class="container">
+        <div>
+            <strong>Row chart</strong>
+        </div>
+        <div class="row">
+            <div class="reset" style="visibility: hidden;">selected:
+                <span class="filter"></span>
+                <a href="javascript:yearBarChart.filterAll();dc.redrawAll();">reset</a>
+            </div>
+            <div id="chart-area"></div>
+        </div>
+    </div>
+
+
+    <script src="d3.js"></script>
+    <script src="crossfilter.js"></script>
+    <script src="dc.js"></script>
+
+    <script>
+
+        var yearRowChart = dc.rowChart("#chart-area");
+
+        d3.csv("dati.csv").then(function (data) {
+            //console.log(data);
+
+            //var parseDate = d3.timeParse("%Y-%m-%d");
+            //var strictIsoParse = d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ");
+
+            data.forEach(function (d) {
+                d.Hs = +d.Hs;
+                d.Tm = +d.Tm;
+                d.Tp = +d.Tp;
+                d.Dirm = +d.Dirm;
+                d.Dirp = +d.Dirp;
+                d.Sprd = +d.Sprd;
+                d.Lm = +d.Lm;
+                d.Lp = +d.Lp;
+                d.uw = +d.uw;
+                d.vw = +d.vw;
+                d.yyyy = +d.yyyy;
+            });
+
+
+            //console.log(data);
+
+            var ndx = crossfilter(data);
+
+            var yearDim = ndx.dimension(function (d) { return d.yyyy; });
+            var groupYear = yearDim.group().reduceSum(function (d) { return d.yyyy; });
+
+            yearRowChart
+                .dimension(yearDim)
+                .group(groupYear)
+                .height(800)
+                .width(800)
+                .elasticX(true);
+
+            dc.renderAll();
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
