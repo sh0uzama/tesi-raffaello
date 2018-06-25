@@ -15,7 +15,7 @@
 <body>
     <h1>
         <center>
-            <strong>Prima Prova Tesi</strong>
+            <strong>Progetto Tesi</strong>
         </center>
     </h1>
 
@@ -33,6 +33,20 @@
                 </div>
 
             </div>
+            
+            <div class="col">
+
+                <div class="chart wave-direction-chart clearfix">
+                    <h4 class="chart-title clearfix">
+                        Filter by Wave Direction
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('wave')">reset</button>
+                    </h4>
+                    <div id="wave-direction-chart"></div>
+                    <div id="wave-direction-chart-legend"></div>
+                </div>
+
+            </div>
+            
 
             <div class="col">
 
@@ -86,6 +100,34 @@
         </div>
         <div class="col"></div>
     </div>
+    
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h4>Wind Strength UW</h4>
+            <div id="wind-strength-uw-chart"></div>
+        </div>
+        <div class="col"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h4>Wind Strength VW</h4>
+            <div id="wind-strength-vw-chart"></div>
+        </div>
+        <div class="col"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h4>Wave DIRM</h4>
+            <div id="wave-chart"></div>
+        </div>
+        <div class="col"></div>
+    </div>
+    
 
     <script src="bootstrap.min.js"></script>
     <script src="d3.js"></script>
