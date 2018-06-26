@@ -40,10 +40,12 @@ var meanWaveLenghtChart = dc.lineChart("#wave-lenght-chart");
 var uwWindStrength = dc.barChart("#wind-strength-uw-chart");
 var vwWindStrength = dc.barChart("#wind-strength-vw-chart");
 var dirmChart = dc.lineChart("#wave-chart");
+var meanPeriodChart = dc.lineChart("#mean-period-chart");
+var peakWavePeriod = dc.lineChart("#peak-period-chart");
 
 //**************************************************************************************************
 
-//Functions for counting the number of data belonging to a certain wind direction (North-South-West-East)
+//Function for counting the number of data belonging to a certain wind direction (North-South-West-East)
 
 function getWindDirection(d) {
 
@@ -102,6 +104,7 @@ function getWaveDirection(d) {
     return result2;
     
 }
+
 
 //****************************************************************************************************
 
@@ -165,6 +168,7 @@ d3.csv("dati.csv").then(function (data) {
     waveDirChart
         .dimension(waveDim)
         .group(groupWave)
+        .ordinalColors([ "#248f24", "#2eb82e" , "#5cd65c" , "#99e699" ])
         .height(350)
         .width(350)
         .legend(waveLegend);
@@ -184,7 +188,7 @@ d3.csv("dati.csv").then(function (data) {
         .elasticY(true)
         .margins({top: 10, right: 10, bottom: 30, left: 60})
         .height(400)
-        .width(550);
+        .width(600);
 
     //yearChart.xAxis().ticks([1979, 1989, 2013, 2017]);
 
@@ -246,10 +250,13 @@ d3.csv("dati.csv").then(function (data) {
         .x(d3.scaleBand())
         .xUnits(dc.units.ordinal)
         //.x(d3.scaleLinear().domain([0,32]))
+        .renderArea(true)
+        .colors("rgb(255, 102, 102)")
         .elasticY(true)
         .elasticX(true)
+        .xAxisLabel("Days of the month")
         .height(400)
-        .width(1200)
+        .width(1050)
         .valueAccessor(p => p.value.average);
 
     
@@ -262,10 +269,12 @@ d3.csv("dati.csv").then(function (data) {
         .group(dirmGroup)
         .x(d3.scaleBand())
         .xUnits(dc.units.ordinal)
+        .renderArea(true)
         .elasticY(true)
         .elasticX(true)
+        .xAxisLabel("Days of the month")
         .height(400)
-        .width(1200)
+        .width(1050)
         .valueAccessor(p => p.value.average);
     
 //***************************************************************************************************
@@ -276,10 +285,12 @@ d3.csv("dati.csv").then(function (data) {
         .group(wpGroup)
         .x(d3.scaleBand())
         .xUnits(dc.units.ordinal)
+        .renderArea(true)
+        .colors("rgb(0, 153, 51)")
         .elasticY(true)
         .elasticX(true)
         .height(400)
-        .width(1200)
+        .width(1050)
         .valueAccessor(p => p.value.max);
     
 //***************************************************************************************************   
@@ -291,10 +302,14 @@ d3.csv("dati.csv").then(function (data) {
         .group(lmGroup)
         .x(d3.scaleBand())
         .xUnits(dc.units.ordinal)
+        .renderArea(true)
+        .colors("rgb(0, 153, 51)")
         .elasticX(true)
         .elasticY(true)
+        .xAxisLabel("Days of the month")
         .height(400)
-        .width(1200)
+        .width(1050)
+        .mouseZoomable(true)
         .valueAccessor(p => p.value.average);
 
 //**************************************************************************************************
@@ -306,10 +321,12 @@ d3.csv("dati.csv").then(function (data) {
         .group(uwWindGroup)
         .x(d3.scaleBand())
         .xUnits(dc.units.ordinal)
+        .colors("#ff944d")
         .elasticX(true)
         .elasticY(true)
+        .xAxisLabel("Days of the month")
         .height(400)
-        .width(1200)
+        .width(1050)
         .valueAccessor(p => p.value.average);
     
 //**************************************************************************************************
@@ -321,13 +338,51 @@ d3.csv("dati.csv").then(function (data) {
         .group(vwWindGroup)
         .x(d3.scaleBand())
         .xUnits(dc.units.ordinal)
+        .colors("#ff944d")
         .elasticX(true)
         .elasticY(true)
+        .xAxisLabel("Days of the month")
         .height(400)
-        .width(1200)
+        .width(1050)
         .valueAccessor(p => p.value.average);
     
+//**************************************************************************************************
+    
+    var tmGroup = dayDim.group().reduce(fieldAdd('Tm'), fieldRemove('Tm'), init);
+    
+    meanPeriodChart
+        .dimension(dayDim)
+        .group(tmGroup)
+        .x(d3.scaleBand())
+        .xUnits(dc.units.ordinal)
+        .renderArea(true)
+        .colors("#cc9966")
+        .elasticX(true)
+        .elasticY(true)
+        .xAxisLabel("Days of the month")
+        .height(400)
+        .width(1050)
+        .valueAccessor(p => p.value.average);
+    
+//**************************************************************************************************
+    
+    var tpGroup = yearDim.group().reduce(fieldAdd('Tp'), fieldRemove('Tp'), init);
 
+    peakWavePeriod
+        .dimension(yearDim)
+        .group(tpGroup)
+        .x(d3.scaleBand())
+        .xUnits(dc.units.ordinal)
+        .renderArea(true)
+        .colors("#cc9966")
+        .elasticY(true)
+        .elasticX(true)
+        .height(400)
+        .width(1050)
+        .valueAccessor(p => p.value.max);
+    
+//*************************************************************************************************
+    
     //Rendering all the charts on the web page
     dc.renderAll();
 

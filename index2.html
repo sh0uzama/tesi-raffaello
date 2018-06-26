@@ -15,10 +15,18 @@
 <body>
     <h1>
         <center>
-            <strong>Progetto Tesi</strong>
+            <strong>PROGETTO TESI</strong>
         </center>
     </h1>
 
+    <br/>
+    <br/>
+    
+    <h2><strong>CHOOSING FILTERS</strong></h2>
+    
+    <br/>
+    <br/>
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col">
@@ -73,61 +81,96 @@
             </div>
         </div>
     </div>
+    
+    <br/>
+    <br/>
 
-    <h2>Data Analysis</h2>
+    <h2><strong>DATA ANALYSIS</strong></h2>
+    
+    <br/>
+    <br/>
 
+<!--**********************************************************************************-->    
     <div class="row">
-        <div class="col"></div>
         <div class="col">
-            <h4>Wave Height (Avg)</h4>
-            <div id="wave-height-chart"></div>
+            <h4>Mean Period T<sub>m</sub> [s]</h4>
+            <div id="mean-period-chart"></div>
+        </div>
+        
+        <div class="col"></div>
+    
+    
+    <div class="col">
+            <h4>Peak wave period overall T<sub>p</sub> [s]</h4>
+            <div id="peak-period-chart"></div>
         </div>
         <div class="col"></div>
     </div>
+    
+ <!--*********************************************************************************-->   
+    <br/>
+    <br/>
+<!--**********************************************************************************-->
+    
     <div class="row">
-        <div class="col"></div>
         <div class="col">
-            <h4>Wave Lenght (Avg)</h4>
+            <h4>Mean wave length (L<sub>m</sub> , Avg) [m] </h4>
             <div id="wave-lenght-chart"></div>
         </div>
+        
         <div class="col"></div>
-    </div>
-    <div class="row">
-        <div class="col"></div>
+    
         <div class="col">
-            <h4>Max Wave Lenght per Year</h4>
+            <h4>Max Wave Length overall (L<sub>p</sub>) [m]</h4>
             <div id="wave-peak-chart"></div>
         </div>
         <div class="col"></div>
     </div>
+        
+    
+<!--*************************************************************************************-->  
+    <br/>
+    <br/>
+<!--*************************************************************************************-->
+    
+    <!-- Displaying the wind velocity charts -->
     
     <div class="row">
-        <div class="col"></div>
         <div class="col">
-            <h4>Wind Strength UW</h4>
+            <h4>West-East wind velocity at 10m    [m/s]</h4>
             <div id="wind-strength-uw-chart"></div>
         </div>
-        <div class="col"></div>
-    </div>
     
-    <div class="row">
-        <div class="col"></div>
+      <div class="col"></div>
+        
         <div class="col">
-            <h4>Wind Strength VW</h4>
+            <h4>South-North wind velocity at 10m    [m/s]</h4>
             <div id="wind-strength-vw-chart"></div>
         </div>
         <div class="col"></div>
     </div>
     
+<!--*************************************************************************************-->
+    <br/>
+    <br/>
+<!--*************************************************************************************-->
+    
     <div class="row">
-        <div class="col"></div>
         <div class="col">
-            <h4>Wave DIRM</h4>
+            <h4>Significant wave height (H<sub>s</sub> , Avg) [m]</h4>
+            <div id="wave-height-chart"></div>
+        </div>
+        
+        <div class="col"></div>
+
+    <div class="col">
+            <h4>Wave mean direction (Dirm) [degN]</h4>
             <div id="wave-chart"></div>
         </div>
         <div class="col"></div>
     </div>
     
+ <!--**********************************************************************************-->   
 
     <script src="bootstrap.min.js"></script>
     <script src="d3.js"></script>
