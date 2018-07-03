@@ -22,13 +22,16 @@
     <br/>
     <br/>
     
-    <h2><strong>CHOOSING FILTERS</strong></h2>
+    <h2><center><strong>CHOOSING FILTERS</strong></center></h2>
     
+    <br/>
+    <br/>
     <br/>
     <br/>
     
     <div class="container-fluid">
         <div class="row">
+            <div class="col"></div>
             <div class="col">
 
                 <div class="chart wind-direction-chart clearfix">
@@ -79,19 +82,64 @@
                 </div>
 
             </div>
+            <div class="col"></div>
+        
         </div>
     </div>
     
     <br/>
     <br/>
+    <br/>
+    <br/>
+    <br/>
 
-    <h2><strong>DATA ANALYSIS</strong></h2>
+    
+    <!--***************************************************************************************-->    
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+     <div class="chart hexabin-number-one clearfix">
+                    <h4 class="chart-title clearfix">
+                        Filter by Hexbin1
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('the-Edwin-button')">reset</button>
+                    </h4>
+                    <div id="hexabin-number-one"></div>
+                </div>
+        </div>
+        
+        <div class="col">
+        <div class="chart hexabin-number-two clearfix">
+                    <h4 class="chart-title clearfix">
+                        Filter by Hexbin2
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('the-Hibbert-button')">reset</button>
+                    </h4>
+                    <div id="hexabin-number-two"></div>
+                </div>
+        </div>
+        
+        <div class="col"></div>
+        
+    </div>
     
     <br/>
     <br/>
-
+    <br/>
+    
+    
+<!--****************************************************************************************-->
+    
+    
+    <h2><center><strong>DATA ANALYSIS</strong></center></h2>
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
 <!--**********************************************************************************-->    
     <div class="row">
+        <div class="col"></div>
         <div class="col">
             <h4>Mean Period T<sub>m</sub> [s]</h4>
             <div id="mean-period-chart"></div>
@@ -113,6 +161,7 @@
 <!--**********************************************************************************-->
     
     <div class="row">
+        <div class="col"></div>
         <div class="col">
             <h4>Mean wave length (L<sub>m</sub> , Avg) [m] </h4>
             <div id="wave-lenght-chart"></div>
@@ -136,6 +185,7 @@
     <!-- Displaying the wind velocity charts -->
     
     <div class="row">
+        <div class="col"></div>
         <div class="col">
             <h4>West-East wind velocity at 10m    [m/s]</h4>
             <div id="wind-strength-uw-chart"></div>
@@ -156,6 +206,8 @@
 <!--*************************************************************************************-->
     
     <div class="row">
+        
+        <div class="col"></div>
         <div class="col">
             <h4>Significant wave height (H<sub>s</sub> , Avg) [m]</h4>
             <div id="wave-height-chart"></div>
@@ -170,8 +222,10 @@
         <div class="col"></div>
     </div>
     
- <!--**********************************************************************************-->   
-
+    
+<!--***************************************************************************************-->   
+   
+    
     <script src="bootstrap.min.js"></script>
     <script src="d3.js"></script>
     <script src="crossfilter.js"></script>
