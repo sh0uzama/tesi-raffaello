@@ -10,10 +10,10 @@ const interval7 = "240-280";
 const interval8 = "280-320";
 const interval9 = "320-360";
 
-const NORTH = "North";
-const WEST = "West";
-const EAST = "East";
-const SOUTH = "South";
+const NORTH = "N";
+const WEST = "W";
+const EAST = "E";
+const SOUTH = "S";
 const NO_WIND = "No wind";
 
 const MONTHS = [
@@ -32,30 +32,13 @@ const MONTHS = [
 ];
 
 
-/*
-
-GRAFICO PER I VENTI:
-
-Link esempio su dc.js examples: https://dc-js.github.io/dc.js/examples/sunburst.html
-
-Link del codice : https://github.com/dc-js/dc.js/blob/master/web/examples/sunburst.html
-
-Link del file csv che viene utilizzato nell'esempio : https://github.com/defunctzombie/d3-examples/blob/master/box-plot/morley.csv
-
-Vorrei creare lo stesso grafico utilizzando come anello interno le direzioni cardinali del vento, e come anello esterno 
-creare le fascie di velocitá [ (o-2 m/s), (2-4 m/s)....] 
-corrispondenti ad ogni direzione cardinale. Cosí uno puó scegliere una direzione cardinale e una fascia di velocita dei venti.
 
 
-*/
-
-
-
-const SPEED1 = "0-3 [m/s]";
-const SPEED2 = "3-6 [m/s]";
-const SPEED3 = "6-9 [m/s]";
-const SPEED4 = "9-12 [m/s]";
-const SPEED5 = "12-15 [m/s]";
+const SPEED1 = "0-3";
+const SPEED2 = "3-6";
+const SPEED3 = "6-9";
+const SPEED4 = "9-12";
+const SPEED5 = "12-15";
 
 
 
@@ -63,40 +46,39 @@ const SPEED5 = "12-15 [m/s]";
 
 // Creating the different types of charts:
 
-var windDirChart = dc.pieChart("#wind-direction-chart");
-var waveDirChart = dc.pieChart("#wave-direction-chart");
-var yearChart = dc.barChart("#year-chart");
-var monthChart = dc.rowChart("#month-chart");
-var waveHeightChart = dc.lineChart("#wave-height-chart");
-var wavePeakChart = dc.lineChart("#wave-peak-chart");
-var meanWaveLenghtChart = dc.lineChart("#wave-lenght-chart");
-//var uwWindStrength      = dc.barChart("#wind-strength-uw-chart");
-//var vwWindStrength      = dc.barChart("#wind-strength-vw-chart");
-
-var windSunburstChart = dc.sunburstChart("#wind-sunburst-chart");
-var waveheightSunburstChart = dc.sunburstChart("#waveheight-sunburst-chart");
+var windDirChart                = dc.pieChart("#wind-direction-chart");
+var waveDirChart                = dc.pieChart("#wave-direction-chart");
+var yearChart                   = dc.barChart("#year-chart");
+var monthChart                  = dc.rowChart("#month-chart");
+var windSunburstChart           = dc.sunburstChart("#wind-sunburst-chart");
+var waveheightSunburstChart     = dc.sunburstChart("#waveheight-sunburst-chart");
 var wavepeakperiodSunburstChart = dc.sunburstChart("#wavepeakperiod-sunburst-chart");
+var hexabinHsTp                 = dc.heatMap("#hexabin-number-one");
+var hexabinHsDm                 = dc.heatMap("#hexabin-number-two");
 
-var dirmChart = dc.lineChart("#wave-chart");
-var meanPeriodChart = dc.lineChart("#mean-period-chart");
-var peakWavePeriod = dc.lineChart("#peak-period-chart");
-var hexabinHsTp = dc.heatMap("#hexabin-number-one");
-var hexabinHsDm = dc.heatMap("#hexabin-number-two");
-//var sunburstCat         = dc.sunburstChart("#first-rose");
+//var tableData                   = dc.dataTable("#table-chart");
+//var waveHeightChart           = dc.lineChart("#wave-height-chart");
+//var wavePeakChart             = dc.lineChart("#wave-peak-chart");
+//var meanWaveLenghtChart       = dc.lineChart("#wave-lenght-chart");
+//var uwWindStrength            = dc.barChart("#wind-strength-uw-chart");
+//var vwWindStrength            = dc.barChart("#wind-strength-vw-chart");
+//var dirmChart                 = dc.lineChart("#wave-chart");
+//var meanPeriodChart           = dc.lineChart("#mean-period-chart");
+//var peakWavePeriod            = dc.lineChart("#peak-period-chart");
 //**************************************************************************************************
 
-//Function for counting the number of data belonging to a certain wind direction (North-South-West-East)
+//Function for counting the number of data belonging to a certain wind direction 
 
 function setWindDirection(d) {
 
     var wd = [];
 
-    var westEast = d.uw;
+    var westEast   = d.uw;
     var southNorth = d.vw;
 
-    var absWE = Math.abs(westEast);
-    var absSN = Math.abs(southNorth);
-    var windForce = Math.sqrt(Math.pow(absWE, 2) + Math.pow(absSN, 2));
+    var absWE       = Math.abs(westEast);
+    var absSN       = Math.abs(southNorth);
+    var windForce   = Math.sqrt(Math.pow(absWE, 2) + Math.pow(absSN, 2));
 
     if (southNorth > 0) {
         wd.push(SOUTH);
@@ -134,31 +116,36 @@ function setWindDirection(d) {
         d.windSpeed = SPEED5;
     }
 
-    if (d.Hs < 2) {
-        d.waveHeight = "Low";
+    if (d.Hs < 1.5) {
+        d.waveHeight = "0-1.5";
     }
-    else if (d.Hs < 4) {
-        d.waveHeight = "Medium";
+    else if (1.5 < d.Hs && d.Hs < 3) {
+        d.waveHeight = "1-2";
     }
-    else if (d.Hs < 6) {
-        d.waveHeight = "High";
+    else if (3 < d.Hs && d.Hs < 4.5) {
+        d.waveHeight = "3-4.5";
     }
-    else {
-        d.waveHeight = "Gargantuan";
+    else if(4.5 < d.Hs && d.Hs < 6)  {
+        d.waveHeight = "4.5-6";
     }
+    else if(6 < d.Hs && d.Hs < 7.5) {
+        d.waveHeight = "6-7.5";
+    }
+    else { d.waveHeight = "High";}
 
-    if (d.Tp < 5) {
-        d.peakPeriod = "Short";
+    if (d.Tp < 3) {
+        d.peakPeriod = "0-3";
     }
-    else if (d.Tp < 10) {
-        d.peakPeriod = "Medium";
+    else if (3 < d.Tp && d.Tp < 6) {
+        d.peakPeriod = "3-6";
     }
-    else if (d.Tp < 15) {
-        d.peakPeriod = "Long";
+    else if (6 < d.Tp && d.Tp < 9) {
+        d.peakPeriod = "6-9";
     }
-    else {
-        d.peakPeriod = "Eternal";
+    else if(9 < d.Tp && d.Tp < 12) {
+        d.peakPeriod = "9-12";
     }
+    else {d.peakPeriod = "Long";}
 
 }
 
@@ -211,93 +198,6 @@ function getWaveDirection(d) {
 
 }
 
-//****************************************************************************************************
-
-/* function getNumberOfHeight(d) {
-    
-    var result3 = [];
-    
-    var waveHeight = d.Hs;
-    
-    if (0 < waveHeight < 0.5) {
-        result3.push(height1);
-    }
-    else if(0.5 < waveHeight < 1) {
-        result3.push(height2);
-    }
-    else if(1 < waveHeight < 1.5) {
-        result3.push(height3);
-    }
-    else if(1.5 < waveHeight < 2) {
-        result3.push(height4);
-    }
-    else if(2 < waveHeight < 2.5) {
-        result3.push(height5);
-    }
-    else if(2.5 < waveHeight < 3) {
-        result3.push(height6);
-    }
-    else if(3 < waveHeight < 3.5) {
-        result3.push(height7);
-    }
-    else if(3.5 < waveHeight < 4) {
-        result3.push(height8);
-    }
-    else if(4 < waveHeight < 4.5) {
-        result3.push(height9);
-    }
-    else if(4.5 < waveHeight < 5) {
-        result3.push(height10);
-    }
-    else if(5 < waveHeight < 5.5) {
-        result3.push(height11);
-    }
-    else if(5.5 < waveHeight <6) {
-        result3.push(height12);
-    }
-    
-    return result3;
-} */
-
-//****************************************************************************************************
-
-/* function getInterval(d) {
-    
-    var result4 = [];
-    
-    var timeInterval = d.Tp;
-    
-    if (0 < timeInterval < 2) {
-        result4.push(interval1);
-    }
-    else if(2 < timeInterval < 4) {
-        result4.push(interval2);
-    }
-    else if(4 < timeInterval < 6) {
-        result4.push(interval3);
-    }
-    else if(6 < timeInterval < 8) {
-        result4.push(interval4);
-    }
-    else if(8 < timeInterval < 10) {
-        result4.push(interval5);
-    }
-    else if(10 < timeInterval <12) {
-        result4.push(interval6);
-    }
-    else if(12 < timeInterval < 14) {
-        result4.push(interval7);
-    }
-    else if(14 < timeInterval < 16) {
-        result4.push(interval8);
-    }
-    else if(16 < timeInterval < 18) {
-        result4.push(interval9);
-    }
-    
-    return result4;
-} */
-
 
 //****************************************************************************************************
 
@@ -319,19 +219,19 @@ d3.csv("dati.csv").then(function (data) {
 
 
         // data coercion: from string to number
-        d.Hs = +d.Hs;
-        d.Tm = +d.Tm;
-        d.Tp = +d.Tp;
-        d.Dirm = +d.Dirm;
-        d.Dirp = +d.Dirp;
-        d.Sprd = +d.Sprd;
-        d.Lm = +d.Lm;
-        d.Lp = +d.Lp;
-        d.uw = +d.uw;
-        d.vw = +d.vw;
-        d.dd = +d.dd;
-        d.mm = +d.mm;
-        d.yyyy = +d.yyyy;
+        d.Hs    = +d.Hs;
+        d.Tm    = +d.Tm;
+        d.Tp    = +d.Tp;
+        d.Dirm  = +d.Dirm;
+        d.Dirp  = +d.Dirp;
+        d.Sprd  = +d.Sprd;
+        d.Lm    = +d.Lm;
+        d.Lp    = +d.Lp;
+        d.uw    = +d.uw;
+        d.vw    = +d.vw;
+        d.dd    = +d.dd;
+        d.mm    = +d.mm;
+        d.yyyy  = +d.yyyy;
 
         // data enrichment
 
@@ -355,22 +255,22 @@ d3.csv("dati.csv").then(function (data) {
 
     //***************************************************************************************************
 
-    var windDim = ndx.dimension(d => d.windDirection);
-    var groupWind = windDim.group();
+    var windDim     = ndx.dimension(d => d.windDirection);
+    var groupWind   = windDim.group();
 
     const windLegend = dc.htmlLegend().container("#wind-direction-chart-legend").horizontal(false).highlightSelected(true);
 
     windDirChart
         .dimension(windDim)
         .group(groupWind)
-        .height(450)
+        .height(420)
         .width(450)
         .legend(windLegend);
 
     //**************************************************************************************************
 
-    var waveDim = ndx.dimension(d => d.waveDirection);
-    var groupWave = waveDim.group();
+    var waveDim     = ndx.dimension(d => d.waveDirection);
+    var groupWave   = waveDim.group();
 
     const waveLegend = dc.htmlLegend().container("#wave-direction-chart-legend").horizontal(false).highlightSelected(true);
 
@@ -378,7 +278,7 @@ d3.csv("dati.csv").then(function (data) {
         .dimension(waveDim)
         .group(groupWave)
         //.ordinalColors([ "#248f24", "#2eb82e" , "#5cd65c" , "#99e699" ])
-        .height(450)
+        .height(420)
         .width(450)
         .legend(waveLegend);
 
@@ -386,8 +286,8 @@ d3.csv("dati.csv").then(function (data) {
 
     //**************************************************************************************************    
 
-    var yearDim = ndx.dimension(d => d.yyyy);
-    var groupYear = yearDim.group();
+    var yearDim     = ndx.dimension(d => d.yyyy);
+    var groupYear   = yearDim.group();
 
     yearChart
         .dimension(yearDim)
@@ -399,13 +299,13 @@ d3.csv("dati.csv").then(function (data) {
         .height(550)
         .width(850);
 
-    //yearChart.xAxis().ticks([1979, 1989, 2013, 2017]);
+    //yearChart.xAxis().ticks(10);
 
 
     //**************************************************************************************************    
 
-    var monthDim = ndx.dimension(d => d.mm);
-    var groupMonth = monthDim.group();
+    var monthDim    = ndx.dimension(d => d.mm);
+    var groupMonth  = monthDim.group();
 
     monthChart
         .dimension(monthDim)
@@ -450,6 +350,10 @@ d3.csv("dati.csv").then(function (data) {
 
     //***************************************************************************************************
 
+    // WAVE-HEIGHT-CHART (LINECHART)
+    
+    /*
+    
     var dayDim = ndx.dimension(d => d.dd);
     var whGroup = dayDim.group().reduce(fieldAdd('Hs'), fieldRemove('Hs'), init);
 
@@ -468,10 +372,17 @@ d3.csv("dati.csv").then(function (data) {
         .height(550)
         .width(1300)
         .valueAccessor(p => p.value.average);
+        
+    */
 
 
     //***************************************************************************************************
 
+    
+    // WAVE MEAN DIRECTION CHART (LINECHART)
+    
+    /*
+    
     var dirmGroup = dayDim.group().reduce(fieldAdd('Dirm'), fieldRemove('Dirm'), init);
 
     dirmChart
@@ -487,8 +398,15 @@ d3.csv("dati.csv").then(function (data) {
         .height(550)
         .width(1300)
         .valueAccessor(p => p.value.average);
+        
+    */
 
     //***************************************************************************************************
+    
+    // WAVE PEAK CHART (LINECHART)
+    
+    /*
+    
     var wpGroup = yearDim.group().reduce(fieldAdd('Lp'), fieldRemove('Lp'), init);
 
     wavePeakChart
@@ -504,9 +422,15 @@ d3.csv("dati.csv").then(function (data) {
         .height(550)
         .width(1300)
         .valueAccessor(p => p.value.max);
+        
+    */
 
     //***************************************************************************************************   
 
+    // WAVE MEAN LENGHT CHART (LINECHART)
+    
+    /*
+    
     var lmGroup = dayDim.group().reduce(fieldAdd('Lm'), fieldRemove('Lm'), init);
 
     meanWaveLenghtChart
@@ -524,81 +448,101 @@ d3.csv("dati.csv").then(function (data) {
         .width(1300)
         .mouseZoomable(true)
         .valueAccessor(p => p.value.average);
+        
+    */
 
     //**************************************************************************************************
 
-    // var uwWindGroup = dayDim.group().reduce(fieldAdd('uw'), fieldRemove('uw'), init);
+    //WIND SPEED CHART (BARCHART)
+    
+    /*
+    
+     var uwWindGroup = dayDim.group().reduce(fieldAdd('uw'), fieldRemove('uw'), init);
 
-    // uwWindStrength
-    //     .dimension(dayDim)
-    //     .group(uwWindGroup)
-    //     .x(d3.scaleBand())
-    //     .xUnits(dc.units.ordinal)
-    //     .colors("#ff944d")
-    //     .elasticX(true)
-    //     .elasticY(true)
-    //     .xAxisLabel("Days of the month")
-    //     .height(550)
-    //     .width(1300)
-    //     .valueAccessor(p => p.value.average);
+     uwWindStrength
+         .dimension(dayDim)
+         .group(uwWindGroup)
+         .x(d3.scaleBand())
+         .xUnits(dc.units.ordinal)
+         .colors("#ff944d")
+         .elasticX(true)
+         .elasticY(true)
+         .xAxisLabel("Days of the month")
+         .height(550)
+         .width(1300)
+         .valueAccessor(p => p.value.average);
+
+    
+     var vwWindGroup = dayDim.group().reduce(fieldAdd('vw'), fieldRemove('vw'), init);
+
+     vwWindStrength
+         .dimension(dayDim)
+         .group(vwWindGroup)
+         .x(d3.scaleBand())
+         .xUnits(dc.units.ordinal)
+         .colors("#ff944d")
+         .elasticX(true)
+         .elasticY(true)
+         .xAxisLabel("Days of the month")
+         .height(550)
+         .width(1300)
+         .valueAccessor(p => p.value.average);
+    
+    */
 
     //**************************************************************************************************
 
-    // var vwWindGroup = dayDim.group().reduce(fieldAdd('vw'), fieldRemove('vw'), init);
-
-    // vwWindStrength
-    //     .dimension(dayDim)
-    //     .group(vwWindGroup)
-    //     .x(d3.scaleBand())
-    //     .xUnits(dc.units.ordinal)
-    //     .colors("#ff944d")
-    //     .elasticX(true)
-    //     .elasticY(true)
-    //     .xAxisLabel("Days of the month")
-    //     .height(550)
-    //     .width(1300)
-    //     .valueAccessor(p => p.value.average);
-
     //**************************************************************************************************
 
-    //**************************************************************************************************
-
-    var windSunburstDim = ndx.dimension(d => [d.windDirection, d.windSpeed]);
-    var windSunburstGroup = windSunburstDim.group();
+    var windSunburstDim     = ndx.dimension(d => [d.windDirection, d.windSpeed]);
+    var windSunburstGroup   = windSunburstDim.group();
 
     windSunburstChart
         .width(800)
         .height(800)
-        .innerRadius(100)
+        .radius(300)
+        .innerRadius(90)
         .dimension(windSunburstDim)
         .group(windSunburstGroup)
-        .legend(dc.legend());
+        //.externalLabels(10);
+        //.margins({ top: 10, right: 10, bottom: 30, left: 60 })
+        .legend(dc.legend().x(-3).itemHeight(14));
+        //.legend(dc.legend());
 
-    var waveheightSunburstDim = ndx.dimension(d => [d.windDirection, d.waveHeight]);
+    var waveheightSunburstDim   = ndx.dimension(d => [d.windDirection, d.waveHeight]);
     var waveheightSunburstGroup = waveheightSunburstDim.group();
 
     waveheightSunburstChart
         .width(800)
         .height(800)
-        .innerRadius(100)
+        .radius(300)
+        .innerRadius(90)
         .dimension(waveheightSunburstDim)
         .group(waveheightSunburstGroup)
-        .legend(dc.legend());
+        .legend(dc.legend().x(-3).itemHeight(14));
+        //.legend(dc.legend());
 
-    var wavepeakperiodSunburstDim = ndx.dimension(d => [d.windDirection, d.peakPeriod]);
+    var wavepeakperiodSunburstDim   = ndx.dimension(d => [d.windDirection, d.peakPeriod]);
     var wavepeakperiodSunburstGroup = wavepeakperiodSunburstDim.group();
 
     wavepeakperiodSunburstChart
         .width(800)
         .height(800)
-        .innerRadius(100)
+        .radius(300)
+        .innerRadius(90)
         .dimension(wavepeakperiodSunburstDim)
         .group(wavepeakperiodSunburstGroup)
-        .legend(dc.legend());
+        .legend(dc.legend().x(-3).itemHeight(14));
+        //.legend(dc.legend());
 
 
     //**************************************************************************************************
 
+    
+    // WAVE MEAN PERIOD CHART (LINE CHART)
+    
+    /*
+    
     var tmGroup = dayDim.group().reduce(fieldAdd('Tm'), fieldRemove('Tm'), init);
 
     meanPeriodChart
@@ -615,8 +559,15 @@ d3.csv("dati.csv").then(function (data) {
         .height(550)
         .width(1300)
         .valueAccessor(p => p.value.average);
+        
+    */
 
     //**************************************************************************************************
+    
+    // WAVE PEAK PERIOD CHART (LINE CHART)
+    
+    /*
+    
 
     var tpGroup = yearDim.group().reduce(fieldAdd('Tp'), fieldRemove('Tp'), init);
 
@@ -633,21 +584,24 @@ d3.csv("dati.csv").then(function (data) {
         .height(550)
         .width(1300)
         .valueAccessor(p => p.value.max);
+        
+        
+    */    
 
     //*************************************************************************************************
 
     var hexabin1Dim = ndx.dimension(d => [(Math.floor(d.Hs * 2)) / 2, (Math.round(d.Tp * 2)) / 2]);
-    var freq1Group = hexabin1Dim.group().reduceCount()
+    var freq1Group  = hexabin1Dim.group().reduceCount()
 
 
     hexabinHsTp
-        .width(860)
-        .height(860)
+        .width(1000)
+        .height(1000)
         .dimension(hexabin1Dim)
         .group(freq1Group)
         //.xBorderRadius(555550)
         //.yBorderRadius(555550)
-        .keyAccessor(function (d) { return d.key[0]; })
+        .keyAccessor(function (d)   { return d.key[0]; })
         .valueAccessor(function (d) { return d.key[1]; })
         .colorAccessor(function (d) { return d.value; })
         .title(function (d) {
@@ -655,20 +609,24 @@ d3.csv("dati.csv").then(function (data) {
                 "Tp:  " + d.key[1] + "\n" +
                 "Count: " + d.value;
         })
-        .colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
-        //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
-        .calculateColorDomain();
-
+        //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
+        //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
+        //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
+        .colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
+        .calculateColorDomain()
+        .on('preRedraw', function() {
+            hexabinHsTp.calculateColorDomain();
+        });
 
     //*************************************************************************************************
 
     var hexabin2Dim = ndx.dimension(d => [(Math.floor(d.Hs * 2)) / 2, (Math.round(d.Dirm / 10)) * 10]);
-    var freq2Group = hexabin2Dim.group().reduceCount()
+    var freq2Group  = hexabin2Dim.group().reduceCount()
 
 
     hexabinHsDm
-        .width(860)
-        .height(860)
+        .width(1000)
+        .height(1000)
         .dimension(hexabin2Dim)
         .group(freq2Group)
         //.xBorderRadius(555550)
@@ -681,12 +639,14 @@ d3.csv("dati.csv").then(function (data) {
                 "Dm:  " + d.key[1] + "\n" +
                 "Count: " + d.value;
         })
-        .colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
-        //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
-        .calculateColorDomain();
+        //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
+        .colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
+        .calculateColorDomain()
+        .on('preRedraw', function() {
+            hexabinHsDm.calculateColorDomain();
+        });
 
     //*************************************************************************************************
-
 
 
     //**************************************************************************************************    
@@ -716,6 +676,15 @@ function resetFilter(filter) {
             break;
         case "the-Hibbert-button":
             chart = hexabinHsDm;
+            break;
+        case "sunburst1":
+            chart = windSunburstChart;
+            break;
+        case "sunburst2":
+            chart = waveheightSunburstChart;
+            break;
+        case "sunburst3":
+            chart = wavepeakperiodSunburstChart;
             break;
         case "wave":
             chart = waveDirChart;
