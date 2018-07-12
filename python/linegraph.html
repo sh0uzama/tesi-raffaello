@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESI RAFFAELLO</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="dc.css">
+    <link rel="stylesheet" href="source-code.css">
+
+</head>
+
+<body>
+
+    <h1>PROGETTO TESI</h1>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col">
+                <h4>Test</h4>
+                <div id="chart"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="d3.js"></script>
+    <script src="crossfilter.js"></script>
+    <script src="dc.js"></script>
+
+    <script>
+        (function () {
+
+            var chart = dc.lineChart("#chart");
+
+            var connection = new WebSocket('ws://localhost:8001/websocket');
+
+            var ndx = crossfilter([
+                { value: 190, time: 0 },
+                { value: 10, time: 0 },
+                { value: 290, time: 0 },
+                { value: 390, time: 0 },
+                { value: 490, time: 0 },
+                { value: 190, time: 0 },
+                { value: 10, time: 0 },
+                { value: 290, time: 0 },
+                { value: 390, time: 0 },
+                { value: 490, time: 0 },
+                { value: 190, time: 0 },
+                { value: 10, time: 0 },
+                { value: 290, time: 0 },
+                { value: 390, time: 0 },
+                { value: 490, time: 0 },
+                { value: 190, time: 0 },
+                { value: 10, time: 0 },
+                { value: 290, time: 0 },
+                { value: 390, time: 0 },
+                { value: 490, time: 0 }
+            ]);
+
+            var valueDim = ndx.dimension(d => d.value);
+
+            connection.onmessage = function (event) {
+                var newData = JSON.parse(event.data);
+                console.log('new data received', newData);
+                var up = [newData];
+                ndx.add(up);
+                valueDim.filterTop(20);
+                dc.redrawAll();
+            }
+            
+            chart
+                .dimension(valueDim)
+                .x(d3.scaleBand())
+                .xUnits(dc.units.ordinal)
+                //.x(d3.scaleLinear().domain([0,32]))
+                .renderArea(true)
+                .renderDataPoints(true)
+                .colors("rgb(255, 102, 102)")
+                .elasticY(true)
+                .elasticX(true)
+                .xAxisLabel("Days of the month")
+                .height(550)
+                .width(1300);
+
+
+            // waveHeightChart
+            //     .dimension(dayDim)
+            //     .group(whGroup)
+            //     .x(d3.scaleBand())
+            //     .xUnits(dc.units.ordinal)
+            //     //.x(d3.scaleLinear().domain([0,32]))
+            //     .renderArea(true)
+            //     .renderDataPoints(true)
+            //     .colors("rgb(255, 102, 102)")
+            //     .elasticY(true)
+            //     .elasticX(true)
+            //     .xAxisLabel("Days of the month")
+            //     .height(550)
+            //     .width(1300)
+            //     .valueAccessor(p => p.value.average);
+
+
+
+
+        })();
+    </script>
+
+</body>
+
+</html>
