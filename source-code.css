@@ -10,3 +10,5 @@
 #wind-direction-chart-legend .dc-html-legend .dc-legend-item-label {
     font-size: 1em;
 }
+
+#mapid { height: 800px; }

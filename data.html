@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TESI RAFFAELLO</title>
@@ -14,52 +15,15 @@
 </head>
 
 <body>
-    <h1>
-        <center>
-            <strong>PROGETTO TESI</strong>
-        </center>
-    </h1>
 
-    <br/>
-    <br/>
-    
-    <h2><center><strong>CHOOSING FILTERS</strong></center></h2>
-    
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    
+    <h1>PROGETTO TESI</h1>
+
+    <h3>CHOOSING FILTERS</h3>
+    <h4 id="coordinates"></h4>
+
     <div class="container-fluid">
+
         <div class="row">
-            
-            <div class="col"></div>
-            <div class="col">
-        
-                <div class="chart wind-direction-chart clearfix">
-                    <h4 class="chart-title clearfix">
-                        Filter by Wind Direction
-                        <button type="button" class="btn btn-secondary" onclick="resetFilter('wind')">reset</button>
-                    </h4>
-                    <div id="wind-direction-chart"></div>
-                    <div id="wind-direction-chart-legend"></div>
-                </div>
-
-            </div>
-            
-            <div class="col">
-
-                <div class="chart wave-direction-chart clearfix">
-                    <h4 class="chart-title clearfix">
-                        Filter by Wave Direction
-                        <button type="button" class="btn btn-secondary" onclick="resetFilter('wave')">reset</button>
-                    </h4>
-                    <div id="wave-direction-chart"></div>
-                    <div id="wave-direction-chart-legend"></div>
-                </div>
-
-            </div>
-            
 
             <div class="col">
 
@@ -84,94 +48,74 @@
                 </div>
 
             </div>
-            <div class="col"></div>
-        
-        </div>
-    </div>
-    
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
 
-    
-    <!--***************************************************************************************-->    
-    <div class="row">
-        <div class="col"></div>
-        <div class="col">
-     <div class="chart hexabin-number-one clearfix">
+        </div>
+
+        <!--***************************************************************************************-->
+        <div class="row">
+            <div class="col">
+                <div class="chart hexabin-number-one clearfix">
                     <h4 class="chart-title clearfix">
                         Filter by Hexbin1
                         <button type="button" class="btn btn-secondary" onclick="resetFilter('the-Edwin-button')">reset</button>
                     </h4>
                     <div id="hexabin-number-one"></div>
                 </div>
-        </div>
-        
-        <div class="col">
-        <div class="chart hexabin-number-two clearfix">
+            </div>
+
+            <div class="col">
+                <div class="chart hexabin-number-two clearfix">
                     <h4 class="chart-title clearfix">
                         Filter by Hexbin2
                         <button type="button" class="btn btn-secondary" onclick="resetFilter('the-Hibbert-button')">reset</button>
                     </h4>
                     <div id="hexabin-number-two"></div>
                 </div>
+            </div>
+
         </div>
-        
-        <div class="col"></div>
-        
+
+        <div class="row">
+
+            <div class="col">
+                <h4 class="chart-title clearfix">
+                    Wind Sunburst Graph
+                    <button type="button" class="btn btn-secondary" onclick="resetFilter('sunburst1')">reset</button>
+                </h4>
+                <div id="wind-sunburst-chart"></div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col">
+                <h4 class="chart-title clearfix">
+                    Wave Height Sunburst Graph
+                    <button type="button" class="btn btn-secondary" onclick="resetFilter('sunburst2')">reset</button>
+                </h4>
+                <div id="waveheight-sunburst-chart"></div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col">
+                <h4 class="chart-title clearfix">
+                    Wave Peak Period Sunburst Graph
+                    <button type="button" class="btn btn-secondary" onclick="resetFilter('sunburst3')">reset</button>
+                </h4>
+                <div id="wavepeakperiod-sunburst-chart"></div>
+            </div>
+        </div>
+
     </div>
-    
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    
-    <div class="row">
 
-        <div class="col">
-            <h4 class="chart-title clearfix">
-                Wind Sunburst Graph
-                <button type="button" class="btn btn-secondary" onclick="resetFilter('sunburst1')">reset</button>
-            </h4>
-            <div id="wind-sunburst-chart"></div>
-        </div>
-    
+    <!--****************************************************************************************-->
 
-    
-        <div class="col"></div>
-        <div class="col">
-            <h4 class="chart-title clearfix">
-                Wave Height Sunburst Graph
-                <button type="button" class="btn btn-secondary" onclick="resetFilter('sunburst2')">reset</button>
-            </h4>
-            <div id="waveheight-sunburst-chart"></div>
-        </div>
-    
-
-    
-        <div class="col"></div>
-        <div class="col">
-            <h4 class="chart-title clearfix">
-                Wave Peak Period Sunburst Graph
-                <button type="button" class="btn btn-secondary" onclick="resetFilter('sunburst3')">reset</button>
-            </h4>
-            <div id="wavepeakperiod-sunburst-chart"></div>
-        </div>
-    </div>
-    
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    
-    
-<!--****************************************************************************************-->
-    
     <!--
     
     <h2><center><strong>DATA ANALYSIS</strong></center></h2>
@@ -182,9 +126,30 @@
     <br/>
     <br/>
     -->
-<!--**********************************************************************************-->    
-    
+    <!--**********************************************************************************-->
+
+
+
     <!--
+
+    <div class="chart wind-direction-chart clearfix">
+        <h4 class="chart-title clearfix">
+            Filter by Wind Direction
+            <button type="button" class="btn btn-secondary" onclick="resetFilter('wind')">reset</button>
+        </h4>
+        <div id="wind-direction-chart"></div>
+        <div id="wind-direction-chart-legend"></div>
+    </div>
+
+    <div class="chart wave-direction-chart clearfix">
+        <h4 class="chart-title clearfix">
+            Filter by Wave Direction
+            <button type="button" class="btn btn-secondary" onclick="resetFilter('wave')">reset</button>
+        </h4>
+        <div id="wave-direction-chart"></div>
+        <div id="wave-direction-chart-legend"></div>
+    </div>
+
     <div class="row">
         <div class="col"></div>
         <div class="col">
@@ -203,11 +168,11 @@
     </div>
 
     -->
-    
- <!--*********************************************************************************-->   
-  <!--  <br/>
+
+    <!--*********************************************************************************-->
+    <!--  <br/>
     <br/>    -->
-<!--**********************************************************************************-->
+    <!--**********************************************************************************-->
     <!--
     <div class="row">
         <div class="col"></div>
@@ -224,15 +189,15 @@
         </div>
         <div class="col"></div>
     </div>
-    -->    
-    
-<!--*************************************************************************************-->  
+    -->
+
+    <!--*************************************************************************************-->
     <!-- <br/>
     <br/>    -->
-<!--*************************************************************************************-->
-    
+    <!--*************************************************************************************-->
+
     <!-- Displaying the wind velocity charts -->
-    
+
     <!-- <div class="row">
         <div class="col"></div>
         <div class="col">
@@ -249,11 +214,11 @@
         <div class="col"></div>
     </div> -->
 
-<!--*************************************************************************************-->
-  <!--  <br/>
+    <!--*************************************************************************************-->
+    <!--  <br/>
     <br/>    -->
-<!--*************************************************************************************-->
-    
+    <!--*************************************************************************************-->
+
     <!--
     <div class="row">
         
@@ -273,10 +238,9 @@
     </div>
     
     -->
-    
-<!--***************************************************************************************-->   
-   
-    
+
+    <!--***************************************************************************************-->
+    <script src="jquery-3.3.1.min.js"></script>
     <script src="bootstrap.min.js"></script>
     <script src="d3.js"></script>
     <script src="crossfilter.js"></script>

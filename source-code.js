@@ -31,23 +31,18 @@ const MONTHS = [
     "December"
 ];
 
-
-
-
 const SPEED1 = "0-3";
 const SPEED2 = "3-6";
 const SPEED3 = "6-9";
 const SPEED4 = "9-12";
 const SPEED5 = "12-15";
 
-
-
 //**************************************************************************************************
 
 // Creating the different types of charts:
 
-var windDirChart                = dc.pieChart("#wind-direction-chart");
-var waveDirChart                = dc.pieChart("#wave-direction-chart");
+//var windDirChart                = dc.pieChart("#wind-direction-chart");
+//var waveDirChart                = dc.pieChart("#wave-direction-chart");
 var yearChart                   = dc.barChart("#year-chart");
 var monthChart                  = dc.rowChart("#month-chart");
 var windSunburstChart           = dc.sunburstChart("#wind-sunburst-chart");
@@ -68,6 +63,14 @@ var hexabinHsDm                 = dc.heatMap("#hexabin-number-two");
 //**************************************************************************************************
 
 //Function for counting the number of data belonging to a certain wind direction 
+
+var urlParams = new URLSearchParams(window.location.search);
+var coordinates = urlParams.get("coordinates");
+if (!coordinates || coordinates.indexOf(";") < 0) {
+    alert ('Missing or wrongly typed coordinates');
+}
+let latLng = coordinates.split(";");
+$("#coordinates").html("Coordinates for LAT: " + latLng[0] + " and LNG: " + latLng[1]);
 
 function setWindDirection(d) {
 
@@ -203,7 +206,7 @@ function getWaveDirection(d) {
 
 // Loading the csv file for which we want to create the dashboard
 
-d3.csv("dati.csv").then(function (data) {
+d3.csv(coordinates + ".csv").then(function (data) {
 
     // Since its a csv file we need to format the data a bit.
     //var dateFormatSpecifier = '%m/%d/%Y';
@@ -255,34 +258,32 @@ d3.csv("dati.csv").then(function (data) {
 
     //***************************************************************************************************
 
-    var windDim     = ndx.dimension(d => d.windDirection);
-    var groupWind   = windDim.group();
+    // var windDim     = ndx.dimension(d => d.windDirection);
+    // var groupWind   = windDim.group();
 
-    const windLegend = dc.htmlLegend().container("#wind-direction-chart-legend").horizontal(false).highlightSelected(true);
+    // const windLegend = dc.htmlLegend().container("#wind-direction-chart-legend").horizontal(false).highlightSelected(true);
 
-    windDirChart
-        .dimension(windDim)
-        .group(groupWind)
-        .height(420)
-        .width(450)
-        .legend(windLegend);
+    // windDirChart
+    //     .dimension(windDim)
+    //     .group(groupWind)
+    //     .height(420)
+    //     .width(450)
+    //     .legend(windLegend);
 
     //**************************************************************************************************
 
-    var waveDim     = ndx.dimension(d => d.waveDirection);
-    var groupWave   = waveDim.group();
+    // var waveDim     = ndx.dimension(d => d.waveDirection);
+    // var groupWave   = waveDim.group();
 
-    const waveLegend = dc.htmlLegend().container("#wave-direction-chart-legend").horizontal(false).highlightSelected(true);
+    // const waveLegend = dc.htmlLegend().container("#wave-direction-chart-legend").horizontal(false).highlightSelected(true);
 
-    waveDirChart
-        .dimension(waveDim)
-        .group(groupWave)
-        //.ordinalColors([ "#248f24", "#2eb82e" , "#5cd65c" , "#99e699" ])
-        .height(420)
-        .width(450)
-        .legend(waveLegend);
-
-
+    // waveDirChart
+    //     .dimension(waveDim)
+    //     .group(groupWave)
+    //     //.ordinalColors([ "#248f24", "#2eb82e" , "#5cd65c" , "#99e699" ])
+    //     .height(420)
+    //     .width(450)
+    //     .legend(waveLegend);
 
     //**************************************************************************************************    
 
