@@ -1,643 +1,645 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Time</title>
-    
-        
-        <link rel="stylesheet" href="bootstrap.min.css">
-        <link rel="stylesheet" href="dc.css">
-        
-    
+
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="dc.css">
+
+
 </head>
 
 <body>
-    
+
     <h1>
         <center>
             <strong>PROGETTO TESI</strong>
         </center>
     </h1>
-    
-    
+
+
     <div class="container-fluid">
-        
-        
-        <div class="row">
-            
 
-               
-            
-                        <div class="col">
-                                <h4 class="chart-title clearfix">
-                                    HeatMap 1
-                                    <button type="button" class="btn btn-secondary" onclick="resetFilter('one')">reset</button>
-                                </h4>
-                                <div id="heatmap1"></div>
-                        </div>
-            
-    
 
-                        <div class="col">
-                                <h4 class="chart-title clearfix">
-                                    HeatMap 2
-                                    <button type="button" class="btn btn-secondary" onclick="resetFilter('two')">reset</button>
-                                </h4>
-                                <div id="heatmap2"></div>
-                        </div>
-            
-    
-            
-            
-            
-        
-        
         <div class="row">
-    
-            
-            
-                        <div class="col">
-                                <h4 class="chart-title clearfix">
-                                    HeatMap 3
-                                    <button type="button" class="btn btn-secondary" onclick="resetFilter('three')">reset</button>
-                                </h4>
-                                <div id="heatmap3"></div>
-                        </div>
-            
-            
-            
-                        <div class="col">
-                                <h4 class="chart-title clearfix">
-                                    HeatMap 4
-                                    <button type="button" class="btn btn-secondary" onclick="resetFilter('four')">reset</button>
-                                </h4>
-                                <div id="heatmap4"></div>
-                        </div>
-            
-            
-            
-            
-            
+
+
+
+
+            <div class="col">
+                <h4 class="chart-title clearfix">
+                    HeatMap 1
+                    <button type="button" class="btn btn-secondary" onclick="resetFilter('one')">reset</button>
+                </h4>
+                <div id="heatmap1"></div>
+            </div>
+
+
+
+            <div class="col">
+                <h4 class="chart-title clearfix">
+                    HeatMap 2
+                    <button type="button" class="btn btn-secondary" onclick="resetFilter('two')">reset</button>
+                </h4>
+                <div id="heatmap2"></div>
+            </div>
+
+
+
+
+
+
+
+            <div class="row">
+
+
+
+                <div class="col">
+                    <h4 class="chart-title clearfix">
+                        HeatMap 3
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('three')">reset</button>
+                    </h4>
+                    <div id="heatmap3"></div>
+                </div>
+
+
+
+                <div class="col">
+                    <h4 class="chart-title clearfix">
+                        HeatMap 4
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('four')">reset</button>
+                    </h4>
+                    <div id="heatmap4"></div>
+                </div>
+
+
+
+
+
+            </div>
+
         </div>
-        
-        </div>   
-            
-            
+
+
         <div class="row">
-    
+
             <div class="col"></div>
-            
-                        <div class="col">
-                                <h4 class="chart-title clearfix">
-                                    HeatMap 5
-                                    <button type="button" class="btn btn-secondary" onclick="resetFilter('five')">reset</button>
-                                </h4>
-                                <div id="heatmap5"></div>
-                        </div>
-            
-            
-            
-                        <div class="col">
-                                <h4 class="chart-title clearfix">
-                                    HeatMap 6
-                                    <button type="button" class="btn btn-secondary" onclick="resetFilter('six')">reset</button>
-                                </h4>
-                                <div id="heatmap6"></div>
-                        </div>
-            
-            
-            
+
+            <div class="col">
+                <h4 class="chart-title clearfix">
+                    HeatMap 5
+                    <button type="button" class="btn btn-secondary" onclick="resetFilter('five')">reset</button>
+                </h4>
+                <div id="heatmap5"></div>
+            </div>
+
+
+
+            <div class="col">
+                <h4 class="chart-title clearfix">
+                    HeatMap 6
+                    <button type="button" class="btn btn-secondary" onclick="resetFilter('six')">reset</button>
+                </h4>
+                <div id="heatmap6"></div>
+            </div>
+
+
+
             <div class="col"></div>
-            
-        
-    
+
+
+
             <div class="col"></div>
-            
-                        <div class="col">
-                                <h4 class="chart-title clearfix">
-                                    HeatMap 7
-                                    <button type="button" class="btn btn-secondary" onclick="resetFilter('seven')">reset</button>
-                                </h4>
-                                <div id="heatmap7"></div>
-                        </div>
-            
-            
-            
-                        <div class="col">
-                                <h4 class="chart-title clearfix">
-                                    HeatMap 8
-                                    <button type="button" class="btn btn-secondary" onclick="resetFilter('eight')">reset</button>
-                                </h4>
-                                <div id="heatmap8"></div>
-                        </div>
-            
-            
+
+            <div class="col">
+                <h4 class="chart-title clearfix">
+                    HeatMap 7
+                    <button type="button" class="btn btn-secondary" onclick="resetFilter('seven')">reset</button>
+                </h4>
+                <div id="heatmap7"></div>
+            </div>
+
+
+
+            <div class="col">
+                <h4 class="chart-title clearfix">
+                    HeatMap 8
+                    <button type="button" class="btn btn-secondary" onclick="resetFilter('eight')">reset</button>
+                </h4>
+                <div id="heatmap8"></div>
+            </div>
+
+
             <div class="col"></div>
-            
-            
+
+
         </div>
-        
-    
- 
+
+
+
         <script src="bootstrap.min.js"></script>
         <script src="d3.js"></script>
         <script src="crossfilter.js"></script>
         <script src="dc.js"></script>
-    
-    <script>
-    
-    var heatMap1    =   dc.heatMap("#heatmap1");
-    var heatMap2    =   dc.heatMap("#heatmap2");
-    var heatMap3    =   dc.heatMap("#heatmap3");
-    var heatMap4    =   dc.heatMap("#heatmap4");
-    var heatMap5    =   dc.heatMap("#heatmap5");   
-    var heatMap6    =   dc.heatMap("#heatmap6");    
-    var heatMap7    =   dc.heatMap("#heatmap7");    
-    var heatMap8    =   dc.heatMap("#heatmap8");
-        
-       /*
-       
-       var data = [
-        {
-            x1:'4.87E-001',
-            x2: '1.43E-001',
-            x3: '5.90E-001',
-            x4:'7.99E-001',
-            x5: '8.64E-001',
-            x6: '6.29E-001',
-            x7: '2.08E-001',
-            x8: '2.28E-001',
-            x9: '2.58E-001',
-            x10: '7.49E+000',
-            x11: '3.88E+001',
-            x12: '-1.34E+001',
-            obj_fn_1: '35.2251',
-            obj_fn_2: '122.277',
-            nln_ineq_con_1: '339.623'
-        },
+
+        <script>
+
+            var heatMap1 = dc.heatMap("#heatmap1");
+            var heatMap2 = dc.heatMap("#heatmap2");
+            var heatMap3 = dc.heatMap("#heatmap3");
+            var heatMap4 = dc.heatMap("#heatmap4");
+            var heatMap5 = dc.heatMap("#heatmap5");
+            var heatMap6 = dc.heatMap("#heatmap6");
+            var heatMap7 = dc.heatMap("#heatmap7");
+            var heatMap8 = dc.heatMap("#heatmap8");
+
+            /*
             
-        {
-            x1:'2.85E-001',
-            x2: '1.43E-001',
-            x3: '6.49E-001',
-            x4:'6.33E-002',
-            x5: '8.88E-001',
-            x6: '9.87E-001',
-            x7: '3.09E-001',
-            x8: '2.24E-001',
-            x9: '1.66E-001',
-            x10: '1.32E+000',
-            x11: '9.31E-001',
-            x12: '-4.96E-001',
-            obj_fn_1: '42.1183',
-            obj_fn_2: '4.13759',
-            nln_ineq_con_1: '309.449'
-        },
+            var data = [
+             {
+                 x1:'4.87E-001',
+                 x2: '1.43E-001',
+                 x3: '5.90E-001',
+                 x4:'7.99E-001',
+                 x5: '8.64E-001',
+                 x6: '6.29E-001',
+                 x7: '2.08E-001',
+                 x8: '2.28E-001',
+                 x9: '2.58E-001',
+                 x10: '7.49E+000',
+                 x11: '3.88E+001',
+                 x12: '-1.34E+001',
+                 obj_fn_1: '35.2251',
+                 obj_fn_2: '122.277',
+                 nln_ineq_con_1: '339.623'
+             },
+                 
+             {
+                 x1:'2.85E-001',
+                 x2: '1.43E-001',
+                 x3: '6.49E-001',
+                 x4:'6.33E-002',
+                 x5: '8.88E-001',
+                 x6: '9.87E-001',
+                 x7: '3.09E-001',
+                 x8: '2.24E-001',
+                 x9: '1.66E-001',
+                 x10: '1.32E+000',
+                 x11: '9.31E-001',
+                 x12: '-4.96E-001',
+                 obj_fn_1: '42.1183',
+                 obj_fn_2: '4.13759',
+                 nln_ineq_con_1: '309.449'
+             },
+                 
+             {
+                 x1:'3.49E-001',
+                 x2: '5.40E-001',
+                 x3: '1.93E-001',
+                 x4:'4.72E-001',
+                 x5: '6.07E-002',
+                 x6: '3.80E-001',
+                 x7: '2.60E-001',
+                 x8: '2.02E-001',
+                 x9: '1.47E-001',
+                 x10: '6.05E+000',
+                 x11: '2.95E+000',
+                 x12: '-4.68E+000',
+                 obj_fn_1: '41.7185',
+                 obj_fn_2: '37.3891',
+                 nln_ineq_con_1: '467.299'
+             },
+                 
+             {
+                 x1:'3.07E-001',
+                 x2: '4.09E-001',
+                 x3: '5.77E-001',
+                 x4:'1.81E-002',
+                 x5: '1.97E-001',
+                 x6: '2.30E-001',
+                 x7: '3.44E-001',
+                 x8: '2.36E-001',
+                 x9: '2.02E-001',
+                 x10: '3.21E+000',
+                 x11: '3.34E+001',
+                 x12: '-1.17E+001',
+                 obj_fn_1: '45.6606',
+                 obj_fn_2: '155.98',
+                 nln_ineq_con_1: '484.209'
+             },
+             
+         ];
+         
+         */
+
+
+            d3.csv("dace700_csv.csv").then(function (data) {
+
+                data.forEach(function (d) {
+
+                    d.x1 = +d.x1;
+                    d.x2 = +d.x2;
+                    d.x3 = +d.x3;
+                    d.x4 = +d.x4;
+                    d.x5 = +d.x5;
+                    d.x6 = +d.x6;
+                    d.x7 = +d.x7;
+                    d.x8 = +d.x8;
+                    d.x9 = +d.x9;
+                    d.x10 = +d.x10;
+                    d.x11 = +d.x11;
+                    d.x12 = +d.x12;
+                    d.obj_fn_1 = +d.obj_fn_1;
+                    d.obj_fn_2 = +d.obj_fn_2;
+                    d.nln_ineq_con_1 = +d.nln_ineq_con_1;
+                });
+
+                //console.log(data);
+
+                var ndx = crossfilter(data);
+
+                //***********************************************************************************************************************************************
+
+                var firstDim = ndx.dimension(d => [(Math.floor(d.x1 * 10)) / 10, (Math.round(d.x2 * 10)) / 10]);
+                var freq1Group = firstDim.group().reduceCount()
+
+                var secondDim = ndx.dimension(d => [(Math.floor(d.x3 * 10)) / 10, (Math.round(d.x4 * 10)) / 10]);
+                var freq2Group = secondDim.group().reduceCount()
+
+                var thirdDim = ndx.dimension(d => [(Math.floor(d.x5 * 10)) / 10, (Math.round(d.x6 * 10)) / 10]);
+                var freq3Group = thirdDim.group().reduceCount()
+
+                var fourthDim = ndx.dimension(d => [(Math.floor(d.x7 * 50)) / 50, (Math.round(d.x8 * 50)) / 50]);
+                var freq4Group = fourthDim.group().reduceCount()
+
+                var fifthDim = ndx.dimension(d => [(Math.floor(d.x9 * 20)) / 20, (Math.round(d.x10 * 1)) / 1]);
+                var freq5Group = fifthDim.group().reduceCount()
+
+                var sixthDim = ndx.dimension(d => [((Math.floor(d.x11 * 0.2)) / 0.2), (Math.round(d.x12 * 1)) / 1]);
+                var freq6Group = sixthDim.group().reduceCount()
+
+                var seventhDim = ndx.dimension(d => [((Math.floor(d.obj_fn_1 * 0.2)) / 0.2), ((Math.floor(d.obj_fn_2 * 0.02)) / 0.2) * 10]);
+                var freq7Group = seventhDim.group().reduceCount()
+
+                var eighthDim = ndx.dimension(d => [((Math.floor(d.obj_fn_2 * 0.02)) / 0.2) * 10, (Math.round(d.nln_ineq_con_1 / 100)) * 100]);
+                var freq8Group = eighthDim.group().reduceCount()
+
+
+                //function render_plots() {
+
+
+                heatMap1
+                    .width(500)
+                    .height(500)
+                    .dimension(firstDim)
+                    .group(freq1Group)
+                    //.xBorderRadius(555550)
+                    //.yBorderRadius(555550)
+                    .keyAccessor(function (d) { return d.key[0]; })
+                    .valueAccessor(function (d) { return d.key[1]; })
+                    .colorAccessor(function (d) { return d.value; })
+                    .title(function (d) {
+                        return "x1:   " + d.key[0] + "\n" +
+                            "x2:  " + d.key[1] + "\n" +
+                            "Count: " + d.value;
+                    })
+                    //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
+                    //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
+                    //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
+                    //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
+                    .colors(["#ccd9ff", "#99b3ff", "#4d79ff", "#0040ff", "#002db3"])
+                    .calculateColorDomain()
+                    .on('preRedraw', function () {
+                        heatMap1.calculateColorDomain();
+                    });
+
+                //***********************************************************************************************************************************************
+
+                //var secondDim = ndx.dimension(d => [(Math.floor(d.x3 * 10)) / 10, (Math.round(d.x4 * 10)) / 10]);
+                //var freq2Group  = secondDim.group().reduceCount()
+
+
+                heatMap2
+                    .width(500)
+                    .height(500)
+                    .dimension(secondDim)
+                    .group(freq2Group)
+                    //.xBorderRadius(555550)
+                    //.yBorderRadius(555550)
+                    .keyAccessor(function (d) { return d.key[0]; })
+                    .valueAccessor(function (d) { return d.key[1]; })
+                    .colorAccessor(function (d) { return d.value; })
+                    .title(function (d) {
+                        return "x3:   " + d.key[0] + "\n" +
+                            "x4:  " + d.key[1] + "\n" +
+                            "Count: " + d.value;
+                    })
+                    //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
+                    //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
+                    //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
+                    //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
+                    .colors(["#ccd9ff", "#99b3ff", "#4d79ff", "#0040ff", "#002db3"])
+                    .calculateColorDomain()
+                    .on('preRedraw', function () {
+                        heatMap2.calculateColorDomain();
+                    });
+
+                //****************************************************************************************************************************************************
+
+                //var thirdDim = ndx.dimension(d => [(Math.floor(d.x5 * 10)) / 10, (Math.round(d.x6 * 10)) / 10]);
+                //var freq3Group  = thirdDim.group().reduceCount()
+
+
+                heatMap3
+                    .width(500)
+                    .height(500)
+                    .dimension(thirdDim)
+                    .group(freq3Group)
+                    //.xBorderRadius(555550)
+                    //.yBorderRadius(555550)
+                    .keyAccessor(function (d) { return d.key[0]; })
+                    .valueAccessor(function (d) { return d.key[1]; })
+                    .colorAccessor(function (d) { return d.value; })
+                    .title(function (d) {
+                        return "x5:   " + d.key[0] + "\n" +
+                            "x6:  " + d.key[1] + "\n" +
+                            "Count: " + d.value;
+                    })
+                    //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
+                    //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
+                    //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
+                    //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
+                    .colors(["#ccd9ff", "#99b3ff", "#4d79ff", "#0040ff", "#002db3"])
+                    .calculateColorDomain()
+                    .on('preRedraw', function () {
+                        heatMap3.calculateColorDomain();
+                    });
+
+                //*******************************************************************************************************************************************************           
+
+                //var fourthDim = ndx.dimension(d => [(Math.floor(d.x7 * 50)) / 50, (Math.round(d.x8 * 50)) / 50]);
+                //var freq4Group  = fourthDim.group().reduceCount()
+
+                heatMap4
+                    .width(500)
+                    .height(500)
+                    .dimension(fourthDim)
+                    .group(freq4Group)
+                    //.xBorderRadius(555550)
+                    //.yBorderRadius(555550)
+                    .keyAccessor(function (d) { return d.key[0]; })
+                    .valueAccessor(function (d) { return d.key[1]; })
+                    .colorAccessor(function (d) { return d.value; })
+                    .title(function (d) {
+                        return "x7:   " + d.key[0] + "\n" +
+                            "x8:  " + d.key[1] + "\n" +
+                            "Count: " + d.value;
+                    })
+                    //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
+                    //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
+                    //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
+                    //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
+                    .colors(["#ccd9ff", "#99b3ff", "#4d79ff", "#0040ff", "#002db3"])
+                    .calculateColorDomain()
+                    .on('preRedraw', function () {
+                        heatMap4.calculateColorDomain();
+                    });
+
+                //*************************************************************************************************************************************************************
+
+                //var fifthDim = ndx.dimension(d => [(Math.floor(d.x9 * 20)) / 20, (Math.round(d.x10 * 1)) / 1]);
+                //var freq5Group  = fifthDim.group().reduceCount()
+
+                heatMap5
+                    .width(500)
+                    .height(500)
+                    .dimension(fifthDim)
+                    .group(freq5Group)
+                    //.xBorderRadius(555550)
+                    //.yBorderRadius(555550)
+                    .keyAccessor(function (d) { return d.key[0]; })
+                    .valueAccessor(function (d) { return d.key[1]; })
+                    .colorAccessor(function (d) { return d.value; })
+                    .title(function (d) {
+                        return "x9:   " + d.key[0] + "\n" +
+                            "x10:  " + d.key[1] + "\n" +
+                            "Count: " + d.value;
+                    })
+                    //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
+                    //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
+                    //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
+                    //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
+                    .colors(["#ccd9ff", "#99b3ff", "#4d79ff", "#0040ff", "#002db3"])
+                    .calculateColorDomain()
+                    .on('preRedraw', function () {
+                        heatMap5.calculateColorDomain();
+                    });
+
+                //*************************************************************************************************************************************************************
+
+
+                //var sixthDim = ndx.dimension(d => [((Math.floor(d.x11 * 0.2)) / 0.2), (Math.round(d.x12 * 1)) / 1]);
+                //var freq6Group  = sixthDim.group().reduceCount()
+
+                heatMap6
+                    .width(500)
+                    .height(500)
+                    .dimension(sixthDim)
+                    .group(freq6Group)
+                    //.xBorderRadius(555550)
+                    //.yBorderRadius(555550)
+                    .keyAccessor(function (d) { return d.key[0]; })
+                    .valueAccessor(function (d) { return d.key[1]; })
+                    .colorAccessor(function (d) { return d.value; })
+                    .title(function (d) {
+                        return "x11:   " + d.key[0] + "\n" +
+                            "x12:  " + d.key[1] + "\n" +
+                            "Count: " + d.value;
+                    })
+                    //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
+                    //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
+                    //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
+                    //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
+                    .colors(["#ccd9ff", "#99b3ff", "#4d79ff", "#0040ff", "#002db3"])
+                    .calculateColorDomain()
+                    .on('preRedraw', function () {
+                        heatMap6.calculateColorDomain();
+                    });
+
+                //*************************************************************************************************************************************************************
+
+
+                //var seventhDim = ndx.dimension(d => [((Math.floor(d.obj_fn_1 * 0.2)) / 0.2), ((Math.floor(d.obj_fn_2 * 0.02)) / 0.2) * 10]);
+                //var freq7Group  = seventhDim.group().reduceCount()
+
+                heatMap7
+                    .width(500)
+                    .height(500)
+                    .dimension(seventhDim)
+                    .group(freq7Group)
+                    //.xBorderRadius(555550)
+                    //.yBorderRadius(555550)
+                    .keyAccessor(function (d) { return d.key[0]; })
+                    .valueAccessor(function (d) { return d.key[1]; })
+                    .colorAccessor(function (d) { return d.value; })
+                    .title(function (d) {
+                        return "x7:   " + d.key[0] + "\n" +
+                            "x8:  " + d.key[1] + "\n" +
+                            "Count: " + d.value;
+                    })
+                    //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
+                    //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
+                    //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
+                    //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
+                    .colors(["#ccd9ff", "#99b3ff", "#4d79ff", "#0040ff", "#002db3"])
+                    .calculateColorDomain()
+                    .on('preRedraw', function () {
+                        heatMap7.calculateColorDomain();
+                    });
+
+                //*************************************************************************************************************************************************************          
+
+                //var eighthDim = ndx.dimension(d => [((Math.floor(d.obj_fn_2 * 0.02)) / 0.2) * 10, (Math.round(d.nln_ineq_con_1 / 100)) * 100]);
+                //var freq8Group  = eighthDim.group().reduceCount()
+
+                heatMap8
+                    .width(500)
+                    .height(500)
+                    .dimension(eighthDim)
+                    .group(freq8Group)
+                    //.xBorderRadius(555550)
+                    //.yBorderRadius(555550)
+                    .keyAccessor(function (d) { return d.key[0]; })
+                    .valueAccessor(function (d) { return d.key[1]; })
+                    .colorAccessor(function (d) { return d.value; })
+                    .title(function (d) {
+                        return "x7:   " + d.key[0] + "\n" +
+                            "x8:  " + d.key[1] + "\n" +
+                            "Count: " + d.value;
+                    })
+                    //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
+                    //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
+                    //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
+                    //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
+                    .colors(["#ccd9ff", "#99b3ff", "#4d79ff", "#0040ff", "#002db3"])
+                    .calculateColorDomain()
+                    .on('preRedraw', function () {
+                        heatMap8.calculateColorDomain();
+                    });
+
+                //*************************************************************************************************************************************************************
+
+                dc.renderAll();
+
+            });
+
+
+            /*
             
-        {
-            x1:'3.49E-001',
-            x2: '5.40E-001',
-            x3: '1.93E-001',
-            x4:'4.72E-001',
-            x5: '6.07E-002',
-            x6: '3.80E-001',
-            x7: '2.60E-001',
-            x8: '2.02E-001',
-            x9: '1.47E-001',
-            x10: '6.05E+000',
-            x11: '2.95E+000',
-            x12: '-4.68E+000',
-            obj_fn_1: '41.7185',
-            obj_fn_2: '37.3891',
-            nln_ineq_con_1: '467.299'
-        },
-            
-        {
-            x1:'3.07E-001',
-            x2: '4.09E-001',
-            x3: '5.77E-001',
-            x4:'1.81E-002',
-            x5: '1.97E-001',
-            x6: '2.30E-001',
-            x7: '3.44E-001',
-            x8: '2.36E-001',
-            x9: '2.02E-001',
-            x10: '3.21E+000',
-            x11: '3.34E+001',
-            x12: '-1.17E+001',
-            obj_fn_1: '45.6606',
-            obj_fn_2: '155.98',
-            nln_ineq_con_1: '484.209'
-        },
-        
-    ];
-    
-    */
-        
-        
-        d3.csv("dace700_csv.csv").then(function (data) {
-            
-            data.forEach(function (d) {
+            render_plots();
+            // data reset function (adapted)
+            function resetData(ndx, dimensions) {
+                var heatMap1ChartFilters = heatMap1.filters();
+                var heatMap2ChartFilters = heatMap2.filters();
+                var heatMap3ChartFilters = heatMap3.filters();
+                var heatMap4ChartFilters = heatMap4.filters();
+                var heatMap5ChartFilters = heatMap5.filters();
+                var heatMap6ChartFilters = heatMap6.filters();
+                var heatMap7ChartFilters = heatMap7.filters();
+                var heatMap8ChartFilters = heatMap8.filters();
                 
-                d.x1                =   +d.x1;
-                d.x2                =   +d.x2;
-                d.x3                =   +d.x3;
-                d.x4                =   +d.x4;
-                d.x5                =   +d.x5;
-                d.x6                =   +d.x6;
-                d.x7                =   +d.x7;
-                d.x8                =   +d.x8;
-                d.x9                =   +d.x9;
-                d.x10               =   +d.x10;
-                d.x11               =   +d.x11;
-                d.x12               =   +d.x12;
-                d.obj_fn_1          =   +d.obj_fn_1;
-                d.obj_fn_2          =   +d.obj_fn_2;
-                d.nln_ineq_con_1    =   +d.nln_ineq_con_1;
-        });
+                heatMap1.filter(null);
+                heatMap2.filter(null);
+                heatMap3.filter(null);
+                heatMap4.filter(null);
+                heatMap5.filter(null);
+                heatMap6.filter(null);
+                heatMap7.filter(null);
+                heatMap8.filter(null);
+                
+                xfilter.remove();
+                
+                heatMap1.filter([heatMap1ChartFilters]);
+                heatMap2.filter([heatMap2ChartFilters]);
+                heatMap3.filter([heatMap3ChartFilters]);
+                heatMap4.filter([heatMap4ChartFilters]);
+                heatMap5.filter([heatMap5ChartFilters]);
+                heatMap6.filter([heatMap6ChartFilters]);
+                heatMap7.filter([heatMap7ChartFilters]);
+                heatMap8.filter([heatMap8ChartFilters]);
+                
+            }
+                
+                connection.onmessage = function(event) {
+                var newData = JSON.parse(event.data);
+                var updateObject =[{
+                    "x1": newData.x1,
+                    "x2": newData.x2,
+                    "x3": newData.x3,
+                    "x4": newData.x4,
+                    "x5": newData.x5,
+                    "x6": newData.x6,
+                    "x7": newData.x7,
+                    "x8": newData.x8,
+                    "x9": newData.x9,
+                    "x10": newData.x10,
+                    "x11": newData.x11,
+                    "x12": newData.x12,
+                    "obj_fn_1": newData.obj_fn_1,
+                    "obj_fn_2": newData.obj_fn_2,
+                    "nln_ineq_con_1": newData.nln_ineq_con_1
+                }]
+                //resetData(ndx, [yearDim, spendDim, nameDim]);
+                xfilter.add(updateObject);
+                dc.redrawAll();
+            }
             
-            //console.log(data);
-            
-             var ndx = crossfilter(data);
+            */
 
-//***********************************************************************************************************************************************
-            
-    var firstDim = ndx.dimension(d => [(Math.floor(d.x1 * 10)) / 10, (Math.round(d.x2 * 10)) / 10]);
-    var freq1Group  = firstDim.group().reduceCount()
-    
-    var secondDim = ndx.dimension(d => [(Math.floor(d.x3 * 10)) / 10, (Math.round(d.x4 * 10)) / 10]);
-    var freq2Group  = secondDim.group().reduceCount()
-    
-    var thirdDim = ndx.dimension(d => [(Math.floor(d.x5 * 10)) / 10, (Math.round(d.x6 * 10)) / 10]);
-    var freq3Group  = thirdDim.group().reduceCount()
-    
-    var fourthDim = ndx.dimension(d => [(Math.floor(d.x7 * 50)) / 50, (Math.round(d.x8 * 50)) / 50]);
-    var freq4Group  = fourthDim.group().reduceCount()
-    
-    var fifthDim = ndx.dimension(d => [(Math.floor(d.x9 * 20)) / 20, (Math.round(d.x10 * 1)) / 1]);
-    var freq5Group  = fifthDim.group().reduceCount()
-    
-    var sixthDim = ndx.dimension(d => [((Math.floor(d.x11 * 0.2)) / 0.2), (Math.round(d.x12 * 1)) / 1]);
-    var freq6Group  = sixthDim.group().reduceCount()
-    
-    var seventhDim = ndx.dimension(d => [((Math.floor(d.obj_fn_1 * 0.2)) / 0.2), ((Math.floor(d.obj_fn_2 * 0.02)) / 0.2) * 10]);
-    var freq7Group  = seventhDim.group().reduceCount()
-    
-    var eighthDim = ndx.dimension(d => [((Math.floor(d.obj_fn_2 * 0.02)) / 0.2) * 10, (Math.round(d.nln_ineq_con_1 / 100)) * 100]);
-    var freq8Group  = eighthDim.group().reduceCount()
-    
-    
-    //function render_plots() {
-        
+            function resetFilter(filter) {
+                let chart = null;
+                switch (filter) {
+                    case "one":
+                        chart = heatMap1;
+                        break;
+                    case "two":
+                        chart = heatMap2;
+                        break;
+                    case "three":
+                        chart = heatMap3;
+                        break;
+                    case "four":
+                        chart = heatMap4;
+                        break;
+                    case "five":
+                        chart = heatMap5;
+                        break;
+                    case "six":
+                        chart = heatMap6;
+                        break;
+                    case "seven":
+                        chart = heatMap7;
+                        break;
+                    case "eight":
+                        chart = heatMap8;
+                        break;
+                }
+                if (chart) {
+                    chart.filterAll();
+                    dc.redrawAll();
+                }
+            }
 
-    heatMap1
-        .width(500)
-        .height(500)
-        .dimension(firstDim)
-        .group(freq1Group)
-        //.xBorderRadius(555550)
-        //.yBorderRadius(555550)
-        .keyAccessor(function (d)   { return d.key[0]; })
-        .valueAccessor(function (d) { return d.key[1]; })
-        .colorAccessor(function (d) { return d.value; })
-        .title(function (d) {
-            return  "x1:   "    + d.key[0] + "\n" +
-                    "x2:  "     + d.key[1] + "\n" +
-                    "Count: "   + d.value;
-            })
-        //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
-        //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
-        //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
-        //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
-        .colors(["#ccd9ff","#99b3ff","#4d79ff","#0040ff","#002db3"])
-        .calculateColorDomain()
-        .on('preRedraw', function() {
-            heatMap1.calculateColorDomain();
-         });
- 
-//***********************************************************************************************************************************************
-        
-    //var secondDim = ndx.dimension(d => [(Math.floor(d.x3 * 10)) / 10, (Math.round(d.x4 * 10)) / 10]);
-    //var freq2Group  = secondDim.group().reduceCount()
-    
-        
-        heatMap2
-        .width(500)
-        .height(500)
-        .dimension(secondDim)
-        .group(freq2Group)
-        //.xBorderRadius(555550)
-        //.yBorderRadius(555550)
-        .keyAccessor(function (d)   { return d.key[0]; })
-        .valueAccessor(function (d) { return d.key[1]; })
-        .colorAccessor(function (d) { return d.value; })
-        .title(function (d) {
-            return  "x3:   "    + d.key[0] + "\n" +
-                    "x4:  "     + d.key[1] + "\n" +
-                    "Count: "   + d.value;
-            })
-        //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
-        //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
-        //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
-        //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
-        .colors(["#ccd9ff","#99b3ff","#4d79ff","#0040ff","#002db3"])
-        .calculateColorDomain()
-        .on('preRedraw', function() {
-            heatMap2.calculateColorDomain();
-         });
-            
-//****************************************************************************************************************************************************
-            
-    //var thirdDim = ndx.dimension(d => [(Math.floor(d.x5 * 10)) / 10, (Math.round(d.x6 * 10)) / 10]);
-    //var freq3Group  = thirdDim.group().reduceCount()
-            
-            
-        heatMap3
-        .width(500)
-        .height(500)
-        .dimension(thirdDim)
-        .group(freq3Group)
-        //.xBorderRadius(555550)
-        //.yBorderRadius(555550)
-        .keyAccessor(function (d)   { return d.key[0]; })
-        .valueAccessor(function (d) { return d.key[1]; })
-        .colorAccessor(function (d) { return d.value; })
-        .title(function (d) {
-            return  "x5:   "    + d.key[0] + "\n" +
-                    "x6:  "     + d.key[1] + "\n" +
-                    "Count: "   + d.value;
-            })
-        //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
-        //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
-        //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
-        //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
-        .colors(["#ccd9ff","#99b3ff","#4d79ff","#0040ff","#002db3"])
-        .calculateColorDomain()
-        .on('preRedraw', function() {
-            heatMap3.calculateColorDomain();
-         });
-            
- //*******************************************************************************************************************************************************           
-            
-    //var fourthDim = ndx.dimension(d => [(Math.floor(d.x7 * 50)) / 50, (Math.round(d.x8 * 50)) / 50]);
-    //var freq4Group  = fourthDim.group().reduceCount()
-            
-        heatMap4
-        .width(500)
-        .height(500)
-        .dimension(fourthDim)
-        .group(freq4Group)
-        //.xBorderRadius(555550)
-        //.yBorderRadius(555550)
-        .keyAccessor(function (d)   { return d.key[0]; })
-        .valueAccessor(function (d) { return d.key[1]; })
-        .colorAccessor(function (d) { return d.value; })
-        .title(function (d) {
-            return  "x7:   "    + d.key[0] + "\n" +
-                    "x8:  "     + d.key[1] + "\n" +
-                    "Count: "   + d.value;
-            })
-        //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
-        //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
-        //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
-        //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
-        .colors(["#ccd9ff","#99b3ff","#4d79ff","#0040ff","#002db3"])
-        .calculateColorDomain()
-        .on('preRedraw', function() {
-            heatMap4.calculateColorDomain();
-        });
-    
-//*************************************************************************************************************************************************************
-            
-    //var fifthDim = ndx.dimension(d => [(Math.floor(d.x9 * 20)) / 20, (Math.round(d.x10 * 1)) / 1]);
-    //var freq5Group  = fifthDim.group().reduceCount()
-            
-        heatMap5
-        .width(500)
-        .height(500)
-        .dimension(fifthDim)
-        .group(freq5Group)
-        //.xBorderRadius(555550)
-        //.yBorderRadius(555550)
-        .keyAccessor(function (d)   { return d.key[0]; })
-        .valueAccessor(function (d) { return d.key[1]; })
-        .colorAccessor(function (d) { return d.value; })
-        .title(function (d) {
-            return  "x9:   "    + d.key[0] + "\n" +
-                    "x10:  "     + d.key[1] + "\n" +
-                    "Count: "   + d.value;
-            })
-        //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
-        //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
-        //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
-        //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
-        .colors(["#ccd9ff","#99b3ff","#4d79ff","#0040ff","#002db3"])
-        .calculateColorDomain()
-        .on('preRedraw', function() {
-            heatMap5.calculateColorDomain();
-        });
-    
-//*************************************************************************************************************************************************************
-                      
-            
-    //var sixthDim = ndx.dimension(d => [((Math.floor(d.x11 * 0.2)) / 0.2), (Math.round(d.x12 * 1)) / 1]);
-    //var freq6Group  = sixthDim.group().reduceCount()
-            
-        heatMap6
-        .width(500)
-        .height(500)
-        .dimension(sixthDim)
-        .group(freq6Group)
-        //.xBorderRadius(555550)
-        //.yBorderRadius(555550)
-        .keyAccessor(function (d)   { return d.key[0]; })
-        .valueAccessor(function (d) { return d.key[1]; })
-        .colorAccessor(function (d) { return d.value; })
-        .title(function (d) {
-            return  "x11:   "    + d.key[0] + "\n" +
-                    "x12:  "     + d.key[1] + "\n" +
-                    "Count: "   + d.value;
-            })
-        //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
-        //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
-        //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
-        //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
-        .colors(["#ccd9ff","#99b3ff","#4d79ff","#0040ff","#002db3"])
-        .calculateColorDomain()
-        .on('preRedraw', function() {
-            heatMap6.calculateColorDomain();
-        });
-    
-//*************************************************************************************************************************************************************
-                      
-            
-    //var seventhDim = ndx.dimension(d => [((Math.floor(d.obj_fn_1 * 0.2)) / 0.2), ((Math.floor(d.obj_fn_2 * 0.02)) / 0.2) * 10]);
-    //var freq7Group  = seventhDim.group().reduceCount()
-            
-        heatMap7
-        .width(500)
-        .height(500)
-        .dimension(seventhDim)
-        .group(freq7Group)
-        //.xBorderRadius(555550)
-        //.yBorderRadius(555550)
-        .keyAccessor(function (d)   { return d.key[0]; })
-        .valueAccessor(function (d) { return d.key[1]; })
-        .colorAccessor(function (d) { return d.value; })
-        .title(function (d) {
-            return  "x7:   "    + d.key[0] + "\n" +
-                    "x8:  "     + d.key[1] + "\n" +
-                    "Count: "   + d.value;
-            })
-        //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
-        //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
-        //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
-        //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
-        .colors(["#ccd9ff","#99b3ff","#4d79ff","#0040ff","#002db3"])
-        .calculateColorDomain()
-        .on('preRedraw', function() {
-            heatMap7.calculateColorDomain();
-        });
-    
-//*************************************************************************************************************************************************************          
-            
-    //var eighthDim = ndx.dimension(d => [((Math.floor(d.obj_fn_2 * 0.02)) / 0.2) * 10, (Math.round(d.nln_ineq_con_1 / 100)) * 100]);
-    //var freq8Group  = eighthDim.group().reduceCount()
-            
-        heatMap8
-        .width(500)
-        .height(500)
-        .dimension(eighthDim)
-        .group(freq8Group)
-        //.xBorderRadius(555550)
-        //.yBorderRadius(555550)
-        .keyAccessor(function (d)   { return d.key[0]; })
-        .valueAccessor(function (d) { return d.key[1]; })
-        .colorAccessor(function (d) { return d.value; })
-        .title(function (d) {
-            return  "x7:   "    + d.key[0] + "\n" +
-                    "x8:  "     + d.key[1] + "\n" +
-                    "Count: "   + d.value;
-            })
-        //.colors(["#000066", "#000099", "#0000cc", "#0000ff", "#3333ff", "#6666ff", "#9999ff", "#ccccff", "#e6e6ff", "#ffffcc", "#ffff99", "#ffff66", "#ffff33", "#ffff00", "#ffbb33", "#ffaa00", "#ff8c1a", "#ff751a", "#ff6600", "#ff471a", "#ff3300", "#ff1a1a", "#e60000", "#cc0000", "#800000"])
-        //.colors(["#cc00cc","#9900cc","#6600cc","#3300cc","#0000cc","#0033cc","#0066cc","#0099cc","#00cccc","#00cc99","#00cc66","#00cc33","#00cc00","#33cc00","#66cc00","#99cc00","#cccc00","#cc9900","#cc6600","#cc3300","#cc0000"])
-        //.colors(["#000066","#000099","#0000ff","#0066ff","#3399ff","#33ccff","#66ffff","#ccffff","#99ffcc","#00ff00","#339933","#ffff00","#ffcc00","#ff9933","#ff6600","#ff5050","#ff3300","#ff0000","#cc0000","#800000"])
-        //.colors(["#0000b3","#0000ff","#3333ff","#4d4dff","#8080ff","#ffeb99","#ffe066","#ffd633","#ffcc00","#e6b800","#ff8533","#ff751a","#ff6600","#ff3300","#e62e00","#b32400","#990000","#660000"])
-        .colors(["#ccd9ff","#99b3ff","#4d79ff","#0040ff","#002db3"])
-        .calculateColorDomain()
-        .on('preRedraw', function() {
-            heatMap8.calculateColorDomain();
-        });
-    
-//*************************************************************************************************************************************************************
-            
-            dc.renderAll();
-            
-    });
-        
-        
-    /*
-    
-    render_plots();
-    // data reset function (adapted)
-    function resetData(ndx, dimensions) {
-        var heatMap1ChartFilters = heatMap1.filters();
-        var heatMap2ChartFilters = heatMap2.filters();
-        var heatMap3ChartFilters = heatMap3.filters();
-        var heatMap4ChartFilters = heatMap4.filters();
-        var heatMap5ChartFilters = heatMap5.filters();
-        var heatMap6ChartFilters = heatMap6.filters();
-        var heatMap7ChartFilters = heatMap7.filters();
-        var heatMap8ChartFilters = heatMap8.filters();
-        
-        heatMap1.filter(null);
-        heatMap2.filter(null);
-        heatMap3.filter(null);
-        heatMap4.filter(null);
-        heatMap5.filter(null);
-        heatMap6.filter(null);
-        heatMap7.filter(null);
-        heatMap8.filter(null);
-        
-        xfilter.remove();
-        
-        heatMap1.filter([heatMap1ChartFilters]);
-        heatMap2.filter([heatMap2ChartFilters]);
-        heatMap3.filter([heatMap3ChartFilters]);
-        heatMap4.filter([heatMap4ChartFilters]);
-        heatMap5.filter([heatMap5ChartFilters]);
-        heatMap6.filter([heatMap6ChartFilters]);
-        heatMap7.filter([heatMap7ChartFilters]);
-        heatMap8.filter([heatMap8ChartFilters]);
-        
-    }
-        
-        connection.onmessage = function(event) {
-        var newData = JSON.parse(event.data);
-        var updateObject =[{
-            "x1": newData.x1,
-            "x2": newData.x2,
-            "x3": newData.x3,
-            "x4": newData.x4,
-            "x5": newData.x5,
-            "x6": newData.x6,
-            "x7": newData.x7,
-            "x8": newData.x8,
-            "x9": newData.x9,
-            "x10": newData.x10,
-            "x11": newData.x11,
-            "x12": newData.x12,
-            "obj_fn_1": newData.obj_fn_1,
-            "obj_fn_2": newData.obj_fn_2,
-            "nln_ineq_con_1": newData.nln_ineq_con_1
-        }]
-        //resetData(ndx, [yearDim, spendDim, nameDim]);
-        xfilter.add(updateObject);
-        dc.redrawAll();
-    }
-    
-    */
-        
-        function resetFilter(filter) {
-    let chart = null;
-    switch (filter) {
-        case "one":
-            chart = heatMap1;
-            break;
-        case "two":
-            chart = heatMap2;
-            break;
-        case "three":
-            chart = heatMap3;
-            break;
-        case "four":
-            chart = heatMap4;
-            break;
-        case "five":
-            chart = heatMap5;
-            break;
-        case "six":
-            chart = heatMap6;
-            break;
-        case "seven":
-            chart = heatMap7;
-            break;
-        case "eight":
-            chart = heatMap8;
-            break;
-    }
-    if (chart) {
-        chart.filterAll();
-        dc.redrawAll();
-    }
-}
-        
-                         
-        
-    </script>
-    
-    
-        
+
+
+        </script>
+
+
+
 </body>
+
 </html>

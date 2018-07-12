@@ -20,7 +20,7 @@ class WebSocketHandler(websocket.WebSocketHandler):
         print('Connection established.')
         # ioloop to wait for 3 seconds before starting to send data
         ioloop.IOLoop.instance().add_timeout(
-            datetime.timedelta(seconds=3), self.send_data)
+            datetime.timedelta(seconds=6), self.send_data)
 
      # close connection
     def on_close(self):
@@ -30,15 +30,15 @@ class WebSocketHandler(websocket.WebSocketHandler):
     def send_data(self):
         print("Sending Data")
         # create a bunch of random data for various dimensions we want
-        x1             = random.randrange(0, 0.8)
-        x2             = random.randrange(0, 0.8)
-        x3             = random.randrange(0, 0.8)
+        x1             = random.randrange(0, 8) / 10
+        x2             = random.randrange(0, 8) / 10
+        x3             = random.randrange(0, 8) / 10
         x4             = random.randrange(0, 1)
         x5             = random.randrange(0, 1)
         x6             = random.randrange(0, 1)
         x7             = random.randrange(0, 4)
-        x8             = random.randrange(0.2, 0.4)
-        x9             = random.randrange(0, 0.4)
+        x8             = random.randrange(2, 4) / 10
+        x9             = random.randrange(0, 4) / 10
         x10            = random.randrange(0, 10)
         x11            = random.randrange(0, 40)
         x12            = random.randrange(-16, 6)
