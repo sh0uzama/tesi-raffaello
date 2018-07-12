@@ -592,12 +592,12 @@ d3.csv(coordinates + ".csv").then(function (data) {
     //*************************************************************************************************
 
     var hexabin1Dim = ndx.dimension(d => [(Math.floor(d.Hs * 2)) / 2, (Math.round(d.Tp * 2)) / 2]);
-    var freq1Group  = hexabin1Dim.group().reduceCount()
-
+    //hexabin1Dim.filter(d => d[0] >= 0.5);
+    var freq1Group  = hexabin1Dim.group().reduceCount();
 
     hexabinHsTp
-        .width(1000)
-        .height(1000)
+        .width(800)
+        .height(800)
         .dimension(hexabin1Dim)
         .group(freq1Group)
         //.xBorderRadius(555550)
@@ -622,12 +622,12 @@ d3.csv(coordinates + ".csv").then(function (data) {
     //*************************************************************************************************
 
     var hexabin2Dim = ndx.dimension(d => [(Math.floor(d.Hs * 2)) / 2, (Math.round(d.Dirm / 10)) * 10]);
-    var freq2Group  = hexabin2Dim.group().reduceCount()
-
+    //hexabin2Dim.filter(d => d[0] >= 0.5);
+    var freq2Group  = hexabin2Dim.group().reduceCount();
 
     hexabinHsDm
-        .width(1000)
-        .height(1000)
+        .width(800)
+        .height(800)
         .dimension(hexabin2Dim)
         .group(freq2Group)
         //.xBorderRadius(555550)
@@ -690,6 +690,17 @@ function resetFilter(filter) {
         case "wave":
             chart = waveDirChart;
             break;
+        case "ALL": {
+            yearChart.filterAll();
+            monthChart.filterAll();
+            hexabinHsTp.filterAll();
+            hexabinHsDm.filterAll();
+            windSunburstChart.filterAll();
+            waveheightSunburstChart.filterAll();
+            wavepeakperiodSunburstChart.filterAll();
+            dc.redrawAll();
+            return;
+        }
     }
     if (chart) {
         chart.filterAll();

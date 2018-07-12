@@ -12,3 +12,22 @@
 }
 
 #mapid { height: 800px; }
+
+h1, h2, h3, h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+div.dc-chart {
+    float: none;
+}
+
+div.dc-chart svg {
+    margin: 0 auto;
+    display: block;
+}
+
+.reset-all {
+    display: block;
+    margin: 0 auto;
+}
