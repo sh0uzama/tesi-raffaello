@@ -16,11 +16,13 @@
 
 <body>
 
-    <h1>
-        <center>
-            <strong>PROGETTO TESI</strong>
-        </center>
-    </h1>
+    <h1>PROGETTO TESI</h1>
+
+    <h3>Reading real-time data using a websocket</h3>
+
+    <div>
+        <button type="button" class="btn btn-secondary reset-all" onclick="togglePause()" id="pauseResumeButton">PAUSE</button>
+    </div>
 
 
     <div class="container-fluid">
@@ -140,14 +142,20 @@
 
         </div>
 
-
-
+        <script src="jquery-3.3.1.min.js"></script>
         <script src="bootstrap.min.js"></script>
         <script src="d3.js"></script>
         <script src="crossfilter.js"></script>
         <script src="dc.js"></script>
 
         <script>
+
+            var paused = false;
+
+            function togglePause() {
+                paused = !paused;
+                $("#pauseResumeButton").html(paused ? "RESUME" : "PAUSE");
+            }
 
             var connection = new WebSocket('ws://localhost:8001/websocket');
 
@@ -161,7 +169,7 @@
             var heatMap8 = dc.heatMap("#heatmap8");
 
             var data = [
-                
+
                 {
                     x1: '4.87E-001',
                     x2: '1.43E-001',
@@ -592,6 +600,11 @@
             }
 
             connection.onmessage = function (event) {
+
+                if (paused) {
+                    return;
+                }
+
                 var newData = JSON.parse(event.data);
 
                 console.log('new data received', newData);
