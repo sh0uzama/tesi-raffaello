@@ -430,22 +430,38 @@ d3.csv(coordinates + ".csv").then(function (data) {
         .group(windSunburstGroup)
         .legend(dc.legend().x(-3).itemHeight(14));
 
-    var colors = {
-        '0-3': '#009900',
-        '3-6': '#99e699',
-        '6-9': '#ffff00',
-        '9-12': '#ff6600',
-        '12-15': '#ff0000'
+    var colors1 = {
+        '0-3': '#008000',
+        '3-6': '#ffcc00',
+        '6-9': '#ff6600',
+        '9-12': '#cc0000',
+        '12-15': '#800080'
     };
+    
+    var colors2 = {
+        'N'       : '#94b8b8',
+        'S'       : '#94b8b8',  
+        'E'       : '#94b8b8',
+        'W'       : '#94b8b8',
+        'N-E'     : '#94b8b8',
+        'N-W'     : '#94b8b8',
+        'S-E'     : '#94b8b8',
+        'S-W'     : '#94b8b8',
+        'No wind' : '#94b8b8'
+    };
+    
     var baseGetColor = windSunburstChart.getColor;
     windSunburstChart.getColor = function (d, i) {
         if (d.depth == 2) {
-            return colors[d.key];
+            return colors1[d.key];
         }
-        else if (Array.isArray(d.key)) {
-            var _val = d.key[1];
-            return colors[_val];
+        else if(d.depth == 1) {
+            return colors2[d.key];
         }
+        //else if (Array.isArray(d.key)) {
+            //var _val = d.key[1];
+            //return colors[_val];
+        //} 
         return baseGetColor(d, i);
     }
 
@@ -734,10 +750,10 @@ function resetFilter(filter) {
             chart = monthChart;
             break;
         case "heatmap1":
-            chart = hexabinHsTp;
+            chart = heatmapOne;
             break;
         case "heatmap2":
-            chart = hexabinHsDm;
+            chart = heatmapTwo;
             break;
         case "sunburst1":
             chart = windSunburstChart;
@@ -754,8 +770,8 @@ function resetFilter(filter) {
         case "ALL": {
             yearChart.filterAll();
             monthChart.filterAll();
-            hexabinHsTp.filterAll();
-            hexabinHsDm.filterAll();
+            heatmapOne.filterAll();
+            heatmapTwo.filterAll();
             windSunburstChart.filterAll();
             waveheightSunburstChart.filterAll();
             wavepeakperiodSunburstChart.filterAll();

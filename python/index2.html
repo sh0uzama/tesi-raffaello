@@ -19,49 +19,51 @@
     <h1>PROGETTO TESI</h1>
 
     <h3>Reading real-time data using a websocket</h3>
-
+    
+    <div>
+        <button type="button" class="btn btn-secondary reset-all" onclick="resetFilter('nine')">RESET ALL</button>
+    </div>
+    
+    <br/>
+    
     <div>
         <button type="button" class="btn btn-secondary reset-all" onclick="togglePause()" id="pauseResumeButton">PAUSE</button>
     </div>
 
+    <br/>
+    <br/>
 
     <div class="container-fluid">
 
-
         <div class="row">
 
-
-
-
             <div class="col">
-                <h4 class="chart-title clearfix">
-                    HeatMap 1
-                    <button type="button" class="btn btn-secondary" onclick="resetFilter('one')">reset</button>
-                </h4>
-                <div id="heatmap1"></div>
+
+                <div class="chart heatmap1 clearfix">
+                    <h4 class="chart-title clearfix">
+                       HeatMap 1
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('one')">reset</button>
+                    </h4>
+                    <div id="heatmap1"></div>
+                </div>
+
             </div>
 
-
-
             <div class="col">
-                <h4 class="chart-title clearfix">
-                    HeatMap 2
-                    <button type="button" class="btn btn-secondary" onclick="resetFilter('two')">reset</button>
-                </h4>
-                <div id="heatmap2"></div>
+
+                <div class="chart heatmap2 clearfix">
+                    <h4 class="chart-title clearfix">
+                        HeatMap 2
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('two')">reset</button>
+                    </h4>
+                    <div id="heatmap2"></div>
+                </div>
+
             </div>
+            
+            <div class="col">
 
-
-
-
-
-
-
-            <div class="row">
-
-
-
-                <div class="col">
+                <div class="chart heatmap3 clearfix">
                     <h4 class="chart-title clearfix">
                         HeatMap 3
                         <button type="button" class="btn btn-secondary" onclick="resetFilter('three')">reset</button>
@@ -69,9 +71,11 @@
                     <div id="heatmap3"></div>
                 </div>
 
+            </div>
+            
+            <div class="col">
 
-
-                <div class="col">
+                <div class="chart heatmap4 clearfix">
                     <h4 class="chart-title clearfix">
                         HeatMap 4
                         <button type="button" class="btn btn-secondary" onclick="resetFilter('four')">reset</button>
@@ -79,69 +83,70 @@
                     <div id="heatmap4"></div>
                 </div>
 
-
-
-
-
             </div>
 
         </div>
-
-
+        
+        <br/>
+        <br/>
+        <br/>
+        
         <div class="row">
 
-            <div class="col"></div>
-
             <div class="col">
-                <h4 class="chart-title clearfix">
-                    HeatMap 5
-                    <button type="button" class="btn btn-secondary" onclick="resetFilter('five')">reset</button>
-                </h4>
-                <div id="heatmap5"></div>
+
+                <div class="chart heatmap5 clearfix">
+                    <h4 class="chart-title clearfix">
+                       HeatMap 5
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('five')">reset</button>
+                    </h4>
+                    <div id="heatmap5"></div>
+                </div>
+
             </div>
 
-
-
             <div class="col">
-                <h4 class="chart-title clearfix">
-                    HeatMap 6
-                    <button type="button" class="btn btn-secondary" onclick="resetFilter('six')">reset</button>
-                </h4>
-                <div id="heatmap6"></div>
+
+                <div class="chart heatmap6 clearfix">
+                    <h4 class="chart-title clearfix">
+                        HeatMap 6
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('six')">reset</button>
+                    </h4>
+                    <div id="heatmap6"></div>
+                </div>
+
             </div>
-
-
-
-            <div class="col"></div>
-
-
-
-            <div class="col"></div>
-
+            
             <div class="col">
-                <h4 class="chart-title clearfix">
-                    HeatMap 7
-                    <button type="button" class="btn btn-secondary" onclick="resetFilter('seven')">reset</button>
-                </h4>
-                <div id="heatmap7"></div>
+
+                <div class="chart heatmap7 clearfix">
+                    <h4 class="chart-title clearfix">
+                        HeatMap 7
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('seven')">reset</button>
+                    </h4>
+                    <div id="heatmap7"></div>
+                </div>
+
             </div>
-
-
-
+            
             <div class="col">
-                <h4 class="chart-title clearfix">
-                    HeatMap 8
-                    <button type="button" class="btn btn-secondary" onclick="resetFilter('eight')">reset</button>
-                </h4>
-                <div id="heatmap8"></div>
+
+                <div class="chart heatmap8 clearfix">
+                    <h4 class="chart-title clearfix">
+                        HeatMap 8
+                        <button type="button" class="btn btn-secondary" onclick="resetFilter('eight')">reset</button>
+                    </h4>
+                    <div id="heatmap8"></div>
+                </div>
+
             </div>
-
-
-            <div class="col"></div>
-
 
         </div>
 
+    </div>
+    
+    
+   
         <script src="jquery-3.3.1.min.js"></script>
         <script src="bootstrap.min.js"></script>
         <script src="d3.js"></script>
@@ -320,8 +325,8 @@
 
 
                 heatMap1
-                    .width(500)
-                    .height(500)
+                    .width(600)
+                    .height(600)
                     .dimension(firstDim)
                     .group(freq1Group)
                     //.xBorderRadius(555550)
@@ -351,8 +356,8 @@
 
 
                 heatMap2
-                    .width(500)
-                    .height(500)
+                    .width(600)
+                    .height(600)
                     .dimension(secondDim)
                     .group(freq2Group)
                     //.xBorderRadius(555550)
@@ -382,8 +387,8 @@
 
 
                 heatMap3
-                    .width(500)
-                    .height(500)
+                    .width(600)
+                    .height(600)
                     .dimension(thirdDim)
                     .group(freq3Group)
                     //.xBorderRadius(555550)
@@ -412,8 +417,8 @@
                 //var freq4Group  = fourthDim.group().reduceCount()
 
                 heatMap4
-                    .width(500)
-                    .height(500)
+                    .width(600)
+                    .height(600)
                     .dimension(fourthDim)
                     .group(freq4Group)
                     //.xBorderRadius(555550)
@@ -442,8 +447,8 @@
                 //var freq5Group  = fifthDim.group().reduceCount()
 
                 heatMap5
-                    .width(500)
-                    .height(500)
+                    .width(600)
+                    .height(600)
                     .dimension(fifthDim)
                     .group(freq5Group)
                     //.xBorderRadius(555550)
@@ -473,8 +478,8 @@
                 //var freq6Group  = sixthDim.group().reduceCount()
 
                 heatMap6
-                    .width(500)
-                    .height(500)
+                    .width(600)
+                    .height(600)
                     .dimension(sixthDim)
                     .group(freq6Group)
                     //.xBorderRadius(555550)
@@ -504,8 +509,8 @@
                 //var freq7Group  = seventhDim.group().reduceCount()
 
                 heatMap7
-                    .width(500)
-                    .height(500)
+                    .width(600)
+                    .height(600)
                     .dimension(seventhDim)
                     .group(freq7Group)
                     //.xBorderRadius(555550)
@@ -534,8 +539,8 @@
                 //var freq8Group  = eighthDim.group().reduceCount()
 
                 heatMap8
-                    .width(500)
-                    .height(500)
+                    .width(600)
+                    .height(600)
                     .dimension(eighthDim)
                     .group(freq8Group)
                     //.xBorderRadius(555550)
@@ -658,6 +663,18 @@
                     case "eight":
                         chart = heatMap8;
                         break;
+                    case "nine": {
+                        heatMap1.filterAll();
+                        heatMap2.filterAll();
+                        heatMap3.filterAll();
+                        heatMap4.filterAll();
+                        heatMap5.filterAll();
+                        heatMap6.filterAll();
+                        heatMap7.filterAll();
+                        heatMap8.filterAll();
+                        dc.redrawAll();
+                        return;
+                    }
                 }
                 if (chart) {
                     chart.filterAll();
