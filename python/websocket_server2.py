@@ -30,21 +30,21 @@ class WebSocketHandler(websocket.WebSocketHandler):
     def send_data(self):
         print("Sending Data")
         # create a bunch of random data for various dimensions we want
-        x1             = random.randrange(0, 8) / 10
-        x2             = random.randrange(0, 8) / 10
-        x3             = random.randrange(0, 8) / 10
-        x4             = random.randrange(0, 1)
-        x5             = random.randrange(0, 1)
-        x6             = random.randrange(0, 1)
-        x7             = random.randrange(0, 4)
-        x8             = random.randrange(2, 4) / 10
-        x9             = random.randrange(0, 4) / 10
-        x10            = random.randrange(0, 10)
-        x11            = random.randrange(0, 40)
-        x12            = random.randrange(-16, 6)
-        obj_fn_1       = random.randrange(30, 75)
-        obj_fn_2       = random.randrange(-50, 400)
-        nln_ineq_con_1 = random.randrange(0, 1300)
+        x1             = random.uniform(0, 0.8)
+        x2             = random.uniform(0, 0.8)
+        x3             = random.uniform(0, 0.8)
+        x4             = random.uniform(0, 1)
+        x5             = random.uniform(0, 1)
+        x6             = random.uniform(0, 1)
+        x7             = random.uniform(0.2, 0.4)
+        x8             = random.uniform(0.2, 0.4)
+        x9             = random.uniform(0, 0.4)
+        x10            = random.uniform(0, 10)
+        x11            = random.uniform(0, 40)
+        x12            = random.uniform(-16, 6)
+        obj_fn_1       = random.uniform(30, 75)
+        obj_fn_2       = random.uniform(-50, 400)
+        nln_ineq_con_1 = random.uniform(0, 1300)
         
         # create a new data point
         point_data = {
